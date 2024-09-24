@@ -1,5 +1,4 @@
 <style>
-/* Container for the entire section */
 .custom-social-section {
   position: relative;
   width: 100%;
@@ -8,23 +7,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:  #FCF7EA;
-  /* border: 1px solid green; */
-;
 }
 
-/* Grid container */
 .social-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal-width columns */
   position: relative;
-  /* max-width: 1200px; */
   width: 100%;
   height: 700px;
-  /* border: 1px solid red; */
 }
 
-/* Left column with absolute image */
 .social-image-container {
   position: relative;
 }
@@ -40,7 +32,6 @@
   object-fit: cover;
 }
 
-/* Right column for text and button */
 .social-content-container {
   display: flex;
   flex-direction: column;
@@ -50,14 +41,15 @@
 }
 
 .social-header {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  line-height: 1.1em;
+  margin-bottom: 37px;
   text-transform: uppercase;
 }
 
 .social-button {
   padding: 10px 20px;
-  background-color:#F7CE48;
+  background-color: #F7CE48;
   color: #1A1A1A;
   border-radius: 100px;
   text-align: center;
@@ -70,8 +62,56 @@
 
 .social-button:hover {
   background-color: #1A1A1A;
-  color:#F7CE48
-  /* opacity: .8; */
+  color: #F7CE48;
+}
+
+/* Media Queries */
+
+/* For tablet devices (768px and smaller) */
+@media (max-width: 768px) {
+  .social-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .social-image {
+    position: relative; /* Remove absolute positioning */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-left: -20px;
+  }
+
+  .social-header {
+    font-size: 2.2rem;
+    text-align: left;
+  }
+
+  .social-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* For mobile devices (480px and smaller) */
+@media (max-width: 480px) {
+  .social-container {
+    padding: 40px 20px;
+  }
+
+  .social-header {
+    font-size: 2.2rem;
+    text-align: left;
+  }
+
+  .social-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    position: relative;
+  }
 }
 
 </style>

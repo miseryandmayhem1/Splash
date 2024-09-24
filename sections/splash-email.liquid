@@ -1,19 +1,15 @@
 <style>
-/* Container for the entire section */
+
 .custom-email-section {
   position: relative;
   width: 100%;
-  /* height: 900px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:  #FCF7EA;
+  background-color: #FCF7EA;
   box-sizing: border-box;
-  /* border: 1px solid green; */
-;
 }
 
-/* Grid container */
 .email-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -24,43 +20,36 @@
   background: #F7CE48;
   border-radius: 20px;
   margin: 0 40px;
-
-  /* border: 1px solid red; */
 }
-
 
 .email-title-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
   height: 100%;
-
 }
 
 .email-content-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
-  font-size: 18px;
-  line-height: 23.4px;
+  font-size: 16px;
 }
 
 .email-content-container p {
-  margin: 0 0 0;
+  margin: 0;
   max-width: 390px;
   text-transform: uppercase;
 }
 
 .email-header {
-  font-size: 2rem;
+  font-size: 34px;
+  line-height: 1.1em;
   margin: 0;
   text-transform: uppercase;
   padding-left: 40px;
 }
-
 
 .newsletter-form {
   display: flex;
@@ -72,7 +61,7 @@
 
 .email-input {
   padding: 14px;
-  padding-left: 0px;
+  padding-left: 0;
   font-size: 16px;
   border: 0 none;
   background-color: transparent;
@@ -101,6 +90,76 @@
 
 .email-submit-button:hover {
   background-color: #333;
+}
+
+/* Media Queries */
+
+/* Tablet devices (768px and smaller) */
+@media (max-width: 900px) {
+
+
+  .email-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 20px;
+    margin: 0 20px;
+  }
+
+  .email-header {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .email-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+}
+
+/* Mobile devices (480px and smaller) */
+@media (max-width: 768px) {
+
+
+  .email-container {
+    grid-template-columns: 1fr ;
+  padding: 40px 20px;
+  position: relative;
+  width: 100%;
+  border-radius: 0px;
+  margin: 0;
+}
+
+  .email-header {
+    font-size: 34px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .email-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .email-content-container p {
+    max-width: 100%;
+  }
+
+  .email-input {
+    width: 100%;
+  }
+
+  .newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.email-input {
+  margin-bottom: 20px;
+}
+
 }
 
 

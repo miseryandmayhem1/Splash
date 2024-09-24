@@ -3549,11 +3549,11 @@ details-disclosure > details {
   display: none;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Fustat";
   src: url('{{ "Fustat-Regular.woff2" | asset_url }}') format("woff2"),
     url('{{ "Fustat-Regular.woff" | asset_url }}') format("woff"),
     url('{{ "Fustat-VariableFont_wght.ttf" | asset_url }}') format("truetype");
   font-weight: normal;
   font-style: normal;
-}
+} */

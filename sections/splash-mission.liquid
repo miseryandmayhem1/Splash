@@ -1,51 +1,35 @@
 <style>
-/* Container for the entire section */
 .custom-mission-section {
   position: relative;
   width: 100%;
-  /* height: 900px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:  #FCF7EA;
+  background-color: #FCF7EA;
   box-sizing: border-box;
-  /* border: 1px solid green; */
-;
 }
 
-/* Grid container */
 .mission-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
   width: 100%;
-    padding: 160px 0px 150px;
-  /* height: 400px; */
+  padding: 160px 0px 150px;
   max-width: 1280px;
-  /* border: 1px solid red; */
 }
-
 
 .mission-title-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
   height: 100%;
-
 }
-
-
 
 .mission-content-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
-
-  font-size: 18px;
-  line-height: 23.4px;
 }
 
 .mission-content-container p {
@@ -54,12 +38,52 @@
 }
 
 .mission-header {
-  font-size: 2rem;
+  font-size: 34px;
+  line-height: 1.1em;
   margin: 0;
   text-transform: uppercase;
   padding-left: 40px;
+  font-weight: 800;
 }
 
+@media (max-width: 768px) {
+  .mission-container {
+    grid-template-columns: 1fr;
+    padding: 100px 20px;
+  }
+
+  .mission-header {
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .mission-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-container {
+    padding: 80px 20px;
+  }
+
+  .mission-header {
+    font-size: 28px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .mission-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .mission-content-container p {
+    max-width: 100%;
+  }
+}
 
 
 </style>
