@@ -1,0 +1,63 @@
+<style>
+.splash-hero {
+  width: 100%;
+  height: 100vh;
+  max-height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  overflow-x: hidden;
+}
+</style>
+
+<section class="splash-hero">
+  <div class="video-container">
+    <video controls playsinline width="100%" height="100%" class="html5-video">
+      <source src="https://cdn.shopify.com/videos/c/o/v/a22d27a3235f47a291b620fd4a5d1434.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+
+
+
+
+{% comment %} <section class="splash-hero">
+  <div class="video-container">
+    <iframe
+      width="100%"
+      height="100%"
+      src="https://www.youtube.com/embed/yiRJ6XNuuwI?controls=0&modestbranding=1&rel=0&iv_load_policy=3&fs=0"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section> {% endcomment %}
