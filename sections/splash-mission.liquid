@@ -1,0 +1,83 @@
+<style>
+/* Container for the entire section */
+.custom-mission-section {
+  position: relative;
+  width: 100%;
+  /* height: 900px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  #FCF7EA;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
+;
+}
+
+/* Grid container */
+.mission-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  width: 100%;
+    padding: 160px 0px 150px;
+  /* height: 400px; */
+  max-width: 1280px;
+  /* border: 1px solid red; */
+}
+
+
+.mission-title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  height: 100%;
+
+}
+
+
+
+.mission-content-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.mission-content-container p {
+  max-width: 480px;
+  margin: 0;
+}
+
+.mission-header {
+  font-size: 2rem;
+  margin: 0;
+  text-transform: uppercase;
+  padding-left: 40px;
+}
+
+
+
+</style>
+
+
+<section class="custom-mission-section">
+  <div class="mission-container">
+
+    <!-- Left Column (Image) -->
+    <div class="mission-title-container">
+      <h2 class="mission-header">What We're<br> About</h2>
+    </div>
+
+    <!-- Right Column (Header and Button) -->
+    <div class="mission-content-container">
+      <p>For all of life's setbacks, struggles and strife, seek help elsewhere. But if you're looking for a quality fuel to drive you through another tough day, look no further. Misery & Mayhem's protein oatmeal can't fix your life, but at least you won't have to go through it hungry.</p>
+      {% comment %} <p></p> {% endcomment %}
+    </div>
+
+  </div>
+</section>

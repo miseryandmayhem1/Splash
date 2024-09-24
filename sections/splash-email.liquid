@@ -1,0 +1,130 @@
+<style>
+/* Container for the entire section */
+.custom-email-section {
+  position: relative;
+  width: 100%;
+  /* height: 900px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  #FCF7EA;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
+;
+}
+
+/* Grid container */
+.email-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  width: 100%;
+  padding: 80px 40px;
+  max-width: 1280px;
+  background: #F7CE48;
+  border-radius: 20px;
+  margin: 0 40px;
+
+  /* border: 1px solid red; */
+}
+
+
+.email-title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  height: 100%;
+
+}
+
+.email-content-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.email-content-container p {
+  margin: 0 0 0;
+  max-width: 390px;
+  text-transform: uppercase;
+}
+
+.email-header {
+  font-size: 2rem;
+  margin: 0;
+  text-transform: uppercase;
+  padding-left: 40px;
+}
+
+
+.newsletter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.email-input {
+  padding: 14px;
+  padding-left: 0px;
+  font-size: 16px;
+  border: 0 none;
+  background-color: transparent;
+  border-bottom: 1px solid #1A1A1A;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.email-input::placeholder {
+  color: #1A1A1A;
+  opacity: 1;
+}
+
+.email-submit-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #1A1A1A;
+  color: #F7CE48;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.email-submit-button:hover {
+  background-color: #333;
+}
+
+
+</style>
+
+
+<section class="custom-email-section">
+  <div class="email-container">
+
+    <div class="email-title-container">
+      <h2 class="email-header">BE THE FIRST<br>TO KNOW.</h2>
+    </div>
+
+    <div class="email-content-container">
+      <p>Be the first to know when we launch.</p>
+        {% comment %} {% include 'newsletter.liquid' %} {% endcomment %}
+         <!-- Newsletter form for Shopify -->
+      <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="newsletter-form">
+        <input type="hidden" name="form_type" value="customer" />
+        <input type="hidden" name="utf8" value="✓" />
+        <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
+        <button type="submit" class="email-submit-button">Join Now</button>
+      </form>
+    </div>
+
+  </div>
+</section>
