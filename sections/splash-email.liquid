@@ -211,13 +211,32 @@
       <p>Be the first to know when we launch.</p>
 
       <!-- Copy the exact form from /pages/contact -->
-      <form method="post" action="/contact" id="ContactFooter" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
+      {% comment %} <form method="post" action="/contact" id="187064" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
         <input type="hidden" name="form_type" value="customer" />
         <input type="hidden" name="utf8" value="✓" />
         <input type="hidden" name="contact[tags]" value="newsletter">
         <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
         <button type="submit" class="email-submit-button">Join Now</button>
-      </form>
+      </form> {% endcomment %}
+           <!-- Add the Form ID block or section -->
+      {% schema %}
+        {
+          "name": "Form Block",
+          "settings": [
+            {
+              "type": "text",
+              "id": "form_id",
+              "label": "Form ID",
+              "default": "187064"
+            }
+          ]
+        }
+      {% endschema %}
+
+      <!-- Insert form using Form ID -->
+      <div class="form-block">
+        {{ form_id }}
+      </div>
 
     </div>
 
