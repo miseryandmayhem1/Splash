@@ -185,7 +185,7 @@
   <button type="submit" class="email-submit-button">Join Now</button>
 </form> {% endcomment %}
 
-<form method="post" action="/contact#contact_form" id="ContactFooter" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
+<form method="post" action="/account/contact" id="ContactFooter" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
   <input type="hidden" name="form_type" value="customer">
   <input type="hidden" name="utf8" value="✓">
   <input type="hidden" name="contact[tags]" value="newsletter">
@@ -205,7 +205,13 @@
   </div>
 </form>
 
-
+<!-- Newsletter form using Shopify's form_tag -->
+<form method="post" action="/account/contact" id="ContactFooter" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
+  {{ form | form_tag: 'customer' }}
+    <input type="email" name="contact[email]" placeholder="Email" required>
+    <button type="submit">Join Now</button>
+  {{ form | end_form_tag }}
+</form>
 
 
     </div>
