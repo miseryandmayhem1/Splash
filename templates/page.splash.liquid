@@ -1,8 +1,17 @@
-{% layout none %}
-{% layout 'barebones' %}
-<!-- reCAPTCHA script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
+{% layout none %}
+
+{% comment %} {% layout 'barebones' %} {% endcomment %}
+
+  {% render 'meta-tags' %}
+
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {%- if settings.animations_reveal_on_scroll -%}
+      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
