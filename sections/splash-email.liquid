@@ -167,8 +167,6 @@
 </style>
 
 
-
-
 <section class="custom-email-section">
   <div class="email-container">
 
@@ -178,22 +176,15 @@
 
     <div class="email-content-container">
       <p>Be the first to know when we launch.</p>
-        {% comment %} {% include 'newsletter.liquid' %} {% endcomment %}
-
-{% if form.errors %}
-  <p class="form-error">There was an error with your submission. Please try again.</p>
-{% elsif form.posted_successfully? %}
-  <p class="form-success">Thank you for subscribing!</p>
-{% endif %}
-
-<form method="post" action="/contact" accept-charset="UTF-8">
-  <input type="hidden" name="form_type" value="customer">
-  <input type="hidden" name="utf8" value="✓">
-  <input type="hidden" name="contact[tags]" value="newsletter">
-  <input type="email" name="contact[email]" placeholder="Email Address" required>
-  <button type="submit">Join Now</button>
-</form>
-
+        {% include 'newsletter.liquid' %}
+         <!-- Newsletter form for Shopify -->
+      <!-- Newsletter form for Shopify -->
+          <form method="post" action="/contact" id="contact_form" accept-charset="UTF-8" class="newsletter-form">
+            <input type="hidden" name="form_type" value="customer" />
+            <input type="hidden" name="utf8" value="✓" />
+            <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
+            <button type="submit" class="email-submit-button">Join Now</button>
+          </form>
 
     </div>
 
