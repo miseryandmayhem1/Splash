@@ -211,58 +211,13 @@
       <p>Be the first to know when we launch.</p>
 
       <!-- Copy the exact form from /pages/contact -->
-      {% comment %} <form method="post" action="/contact" id="187064" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
+      <form method="post" action="/contact" id="187064" accept-charset="UTF-8" class="footer__newsletter newsletter-form">
         <input type="hidden" name="form_type" value="customer" />
         <input type="hidden" name="utf8" value="✓" />
         <input type="hidden" name="contact[tags]" value="newsletter">
         <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
         <button type="submit" class="email-submit-button">Join Now</button>
-      </form> {% endcomment %}
-           <!-- Add the Form ID block or section -->
-
-
-{% form 'contact' %}
-  {{ form.errors | default_errors }}
-
-  <div class="first-name">
-    <label for="first-name">First name</label>
-    <input type="text" name="contact[first_name]" id="first-name" />
-  </div>
-
-  <div class="last-name">
-    <label for="last-name">Last name</label>
-    <input type="text" name="contact[last_name]" id="last-name" />
-  </div>
-
-  <div class="phone">
-    <label for="phone">Phone</label>
-    <input type="tel" name="contact[phone]" id="phone" />
-  </div>
-
-  <div class="email">
-    <label for="email">Email</label>
-    <input type="email" name="contact[email]" id="email" />
-  </div>
-
-  <div class="order-number">
-    <label for="order-number">Order number</label>
-    <input type="text" name="contact[order_number]" id="order-number" />
-  </div>
-
-  <div class="message">
-    <label for="message">Message</label>
-    <textarea name="contact[body]" id="message"></textarea>
-  </div>
-
-  <div class="submit">
-    <input type="submit" value="Create" />
-  </div>
-{% endform %}
-
-
-
-
-
+      </form>
 
     </div>
 
