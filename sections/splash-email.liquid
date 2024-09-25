@@ -219,23 +219,17 @@
         <button type="submit" class="email-submit-button">Join Now</button>
       </form> {% endcomment %}
            <!-- Add the Form ID block or section -->
-      {% schema %}
-        {
-          "name": "Form Block",
-          "settings": [
-            {
-              "type": "text",
-              "id": "form_id",
-              "label": "Form ID",
-              "default": "187064"
-            }
-          ]
-        }
-      {% endschema %}
 
-      <!-- Insert form using Form ID -->
+
+                 <!-- Insert form using Form ID -->
+      {% assign form_id = 187064 %}
       <div class="form-block">
-        {{ form_id }}
+        <!-- Output the form with the provided Form ID -->
+        {% if form_id %}
+          {{ form_id }}
+        {% else %}
+          <p>Form not available. Please check the form settings.</p>
+        {% endif %}
       </div>
 
     </div>
