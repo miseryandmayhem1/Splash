@@ -211,11 +211,17 @@
       <p>Be the first to know when we launch.</p>
 
       <!-- Success/Error Messages -->
-      <p id="form-message" style="display:none;"></p>
+      {% if form.errors %}
+        <p class="form-error">There was an error with your submission. Please try again.</p>
+      {% elsif form.posted_successfully? %}
+        <p class="form-success">Thank you for subscribing!</p>
+      {% endif %}
 
-      <!-- Newsletter Form -->
-      <form id="newsletter-form" class="newsletter-form">
-        <input type="email" name="email" id="email-input" placeholder="Email Address" required class="email-input">
+      <!-- Shopify Native Newsletter Form -->
+      <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="newsletter-form">
+        <input type="hidden" name="form_type" value="customer" />
+        <input type="hidden" name="utf8" value="✓" />
+        <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
         <button type="submit" class="email-submit-button">Join Now</button>
       </form>
 
@@ -223,47 +229,6 @@
 
   </div>
 </section>
-
-<script>
-  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent the default form submission
-
-    // Get form data
-    var email = document.getElementById('email-input').value;
-
-    // Encode form data properly
-    var formData = new URLSearchParams();
-    formData.append('form_type', 'customer');
-    formData.append('utf8', '✓');
-    formData.append('contact[email]', email);
-    formData.append('contact[tags]', 'newsletter');
-
-    // AJAX Request to submit form data
-    fetch('/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'X-Requested-With': 'XMLHttpRequest'
-      },
-      body: formData.toString()  // Properly encoded form data
-    })
-    .then(function(response) {
-      if (response.ok) {
-        document.getElementById('form-message').textContent = 'Thank you for subscribing!';
-        document.getElementById('form-message').style.color = 'green';
-        document.getElementById('form-message').style.display = 'block';
-        document.getElementById('newsletter-form').reset();
-      } else {
-        return response.text().then(function(text) { throw new Error(text); });
-      }
-    })
-    .catch(function(error) {
-      document.getElementById('form-message').textContent = 'There was an error. Please try again.';
-      document.getElementById('form-message').style.color = 'red';
-      document.getElementById('form-message').style.display = 'block';
-    });
-  });
-</script>
 
 
 
