@@ -166,6 +166,12 @@
 
 </style>
 
+{% if form.errors %}
+  <p class="form-error">There was an error with your submission. Please try again.</p>
+{% elsif form.posted_successfully? %}
+  <p class="form-success">Thank you for subscribing!</p>
+{% endif %}
+
 
 <section class="custom-email-section">
   <div class="email-container">
@@ -178,12 +184,11 @@
       <p>Be the first to know when we launch.</p>
         {% comment %} {% include 'newsletter.liquid' %} {% endcomment %}
 
- <!-- Use Shopify's form_tag for newsletter -->
+     <!-- Use Shopify's form_tag for newsletter -->
       {{ form | form_tag: 'customer' }}
         <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
         <button type="submit" class="email-submit-button">Join Now</button>
       {{ form | end_form_tag }}
-
 
 
 
