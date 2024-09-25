@@ -161,30 +161,6 @@
   margin-bottom: 20px;
 }
 
-
-form#contact_form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form#contact_form input[type="email"] {
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 300px;
-}
-
-form#contact_form button {
-  padding: 10px 20px;
-  background-color: #1A1A1A;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-
-
 }
 
 
@@ -202,25 +178,13 @@ form#contact_form button {
       <p>Be the first to know when we launch.</p>
         {% comment %} {% include 'newsletter.liquid' %} {% endcomment %}
          <!-- Newsletter form for Shopify -->
-       {% comment %} <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="newsletter-form">
-        {{ form | form_tag: 'customer' }} <!-- Shopify's customer form submission -->
-          <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
-          <button type="submit" class="email-submit-button">Join Now</button>
-        {{ form | end_form_tag }}
-      </form> {% endcomment %}
-       <!-- Newsletter form without section nesting -->
-       <!-- Proper Shopify newsletter form -->
-
-
-      {% comment %} <form method="post" action="/contact" accept-charset="UTF-8" class="newsletter-form">
-        <input type="hidden" name="form_type" value="customer" />
-        <input type="hidden" name="utf8" value="✓" />
-        <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
-        <button type="submit" class="email-submit-button">Join Now</button>
-      </form> {% endcomment %}
-
-
-       {% render 'newsletter' %}
+      <!-- Newsletter form for Shopify -->
+<form method="post" action="/contact" id="contact_form" accept-charset="UTF-8" class="newsletter-form">
+  <input type="hidden" name="form_type" value="customer" />
+  <input type="hidden" name="utf8" value="✓" />
+  <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
+  <button type="submit" class="email-submit-button">Join Now</button>
+</form>
 
     </div>
 
