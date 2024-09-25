@@ -167,7 +167,7 @@
 </style>
 
 
-<section class="custom-email-section">
+{% comment %} <section class="custom-email-section">
   <div class="email-container">
 
     <div class="email-title-container">
@@ -196,4 +196,66 @@
     </div>
 
   </div>
+</section> {% endcomment %}
+
+
+
+<section class="custom-email-section">
+  <div class="email-container">
+
+    <div class="email-title-container">
+      <h2 class="email-header">BE THE FIRST<br>TO KNOW.</h2>
+    </div>
+
+    <div class="email-content-container">
+      <p>Be the first to know when we launch.</p>
+
+      <!-- Success/Error Messages -->
+      <p id="form-message" style="display:none;"></p>
+
+      <!-- Newsletter Form -->
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" name="email" id="email-input" placeholder="Email Address" required class="email-input">
+        <button type="submit" class="email-submit-button">Join Now</button>
+      </form>
+
+    </div>
+
+  </div>
 </section>
+
+<script>
+  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent the default form submission
+
+    // Get form data
+    var email = document.getElementById('email-input').value;
+
+    // AJAX Request to submit form data
+    fetch('/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: 'form_type=customer&utf8=✓&contact[email]=' + encodeURIComponent(email) + '&contact[tags]=newsletter'
+    })
+    .then(function(response) {
+      if (response.ok) {
+        document.getElementById('form-message').textContent = 'Thank you for subscribing!';
+        document.getElementById('form-message').style.color = 'green';
+        document.getElementById('form-message').style.display = 'block';
+        document.getElementById('newsletter-form').reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    })
+    .catch(function(error) {
+      document.getElementById('form-message').textContent = 'There was an error. Please try again.';
+      document.getElementById('form-message').style.color = 'red';
+      document.getElementById('form-message').style.display = 'block';
+    });
+  });
+</script>
+
+
