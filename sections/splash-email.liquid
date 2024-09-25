@@ -178,44 +178,11 @@
       <p>Be the first to know when we launch.</p>
         {% comment %} {% include 'newsletter.liquid' %} {% endcomment %}
 
-   <div id="newsletter-message" style="display:none;">Thank you for subscribing!</div>
-
-<form id="newsletter-form" method="post" action="/contact#contact_form" class="footer__newsletter newsletter-form">
-  <input type="hidden" name="form_type" value="customer">
-  <input type="hidden" name="utf8" value="✓">
-  <input type="email" name="contact[email]" class="email-input" placeholder="Email" required>
-
-  <button type="submit" class="newsletter-form__button field__button" aria-label="Subscribe">
-    Join Now
-  </button>
-</form>
-
-<script>
-  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    var formData = new FormData(this);
-
-    fetch('/contact', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest'
-      }
-    })
-    .then(function(response) {
-      if (response.ok) {
-        document.getElementById('newsletter-message').style.display = 'block';
-        document.getElementById('newsletter-form').style.display = 'none';
-      } else {
-        alert('Something went wrong. Please try again.');
-      }
-    })
-    .catch(function(error) {
-      alert('There was a problem with the form submission.');
-    });
-  });
-</script>
+ <!-- Use Shopify's form_tag for newsletter -->
+      {{ form | form_tag: 'customer' }}
+        <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
+        <button type="submit" class="email-submit-button">Join Now</button>
+      {{ form | end_form_tag }}
 
 
 
