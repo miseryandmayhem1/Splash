@@ -231,6 +231,13 @@
     // Get form data
     var email = document.getElementById('email-input').value;
 
+    // Encode form data properly
+    var formData = new URLSearchParams();
+    formData.append('form_type', 'customer');
+    formData.append('utf8', '✓');
+    formData.append('contact[email]', email);
+    formData.append('contact[tags]', 'newsletter');
+
     // AJAX Request to submit form data
     fetch('/contact', {
       method: 'POST',
@@ -238,7 +245,7 @@
         'Content-Type': 'application/x-www-form-urlencoded',
         'X-Requested-With': 'XMLHttpRequest'
       },
-      body: 'form_type=customer&utf8=✓&contact[email]=' + encodeURIComponent(email) + '&contact[tags]=newsletter'
+      body: formData.toString()  // Properly encoded form data
     })
     .then(function(response) {
       if (response.ok) {
@@ -247,7 +254,7 @@
         document.getElementById('form-message').style.display = 'block';
         document.getElementById('newsletter-form').reset();
       } else {
-        throw new Error('Form submission failed');
+        return response.text().then(function(text) { throw new Error(text); });
       }
     })
     .catch(function(error) {
@@ -257,5 +264,6 @@
     });
   });
 </script>
+
 
 
