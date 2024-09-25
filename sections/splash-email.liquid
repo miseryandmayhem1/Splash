@@ -184,11 +184,14 @@
         <p class="form-success">Thank you for subscribing!</p>
       {% endif %}
 
-      <!-- Use Shopify's form_tag for customer newsletter sign-up -->
-      {{ form | form_tag: 'customer' }}
+      <!-- Standard HTML Form for Newsletter -->
+      <form method="post" action="/contact" id="contact_form" accept-charset="UTF-8" class="newsletter-form">
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="✓">
+        <input type="hidden" name="contact[tags]" value="newsletter">
         <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
         <button type="submit" class="email-submit-button">Join Now</button>
-      {{ form | end_form_tag }}
+      </form>
 
     </div>
 
