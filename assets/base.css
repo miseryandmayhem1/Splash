@@ -3557,3 +3557,9 @@ details-disclosure > details {
   font-weight: normal;
   font-style: normal;
 } */
+
+#shopify-section-sections--16485178245255__announcement-bar,
+.header,
+.footer {
+  display: none !important;
+}
