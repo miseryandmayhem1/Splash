@@ -19,6 +19,21 @@
       "settings": {
       }
     },
+    "splash-email": {
+      "type": "splash-email",
+      "settings": {
+      }
+    },
+    "splash-launch": {
+      "type": "splash-launch",
+      "settings": {
+      }
+    },
+    "splash-social": {
+      "type": "splash-social",
+      "settings": {
+      }
+    },
     "splash-footer": {
       "type": "splash-footer",
       "settings": {
@@ -28,6 +43,9 @@
   "order": [
     "splash-hero",
     "splash-mission",
+    "splash-email",
+    "splash-launch",
+    "splash-social",
     "splash-footer"
   ]
 }
