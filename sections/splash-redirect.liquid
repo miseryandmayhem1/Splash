@@ -1,7 +1,5 @@
-  {% section 'splash-hero' %}
-  {% section 'splash-mission' %}
-  {% section 'splash-email' %}
-      {% comment %} {% section 'newsletter' %} {% endcomment %}
-  {% section 'splash-launch' %}
-  {% section 'splash-social' %}
-  {% section 'splash-footer' %}
+<section class="splash-page">
+  {% assign splash_page = pages['splash'] %}
+  {{ splash_page.content }}
+</section>
+
