@@ -1,10 +1,7 @@
-<section class="splash-page">
-  {% assign splash_page = pages['splash'] %}
-  {{ splash_page.content }}
-</section>
-
-<section class="splash-page">
-  <h1>This is the splash page section</h1>
-  {% assign splash_page = pages['splash'] %}
-  {{ splash_page.content }}
-</section>
+  {% section 'splash-hero' %}
+  {% section 'splash-mission' %}
+  {% section 'splash-email' %}
+      {% comment %} {% section 'newsletter' %} {% endcomment %}
+  {% section 'splash-launch' %}
+  {% section 'splash-social' %}
+  {% section 'splash-footer' %}
