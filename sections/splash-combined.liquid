@@ -642,7 +642,24 @@ body {
 
 
 
-<section class="custom-email-section">
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <section class="custom-email-section">
   <div class="email-container">
 
     <div class="email-title-container">
@@ -652,6 +669,17 @@ body {
     <div class="email-content-container">
 
       <script>
+        // Check if the URL contains 'customer_posted=true'
+        const urlParams = new URLSearchParams(window.location.search);
+        const customerPosted = urlParams.get('customer_posted');
+
+        // If 'customer_posted=true', show the success message
+        if (customerPosted === 'true') {
+          document.getElementById('form-message').innerHTML = '<p>Thank you for subscribing!</p>';
+          window.history.replaceState(null, null, window.location.pathname); // Clear query params from the URL
+        }
+
+        // Add form submission handler
         document.getElementById('newsletterForm').addEventListener('submit', function(event) {
           event.preventDefault(); // Prevent the default form submission
 
@@ -670,18 +698,17 @@ body {
           })
           .then((response) => {
             if (response.ok) {
-              // Show success message
+              // Simulate form submission behavior and URL change
               document.getElementById('form-message').innerHTML = '<p>Thank you for subscribing!</p>';
-              form.reset(); // Optionally reset the form
+              form.reset(); // Reset the form
+              window.history.replaceState(null, null, window.location.pathname); // Remove query params from URL
             } else {
-              // Handle errors in response, such as 422 status for form validation errors
               response.text().then((text) => {
                 document.getElementById('form-message').innerHTML = '<p>' + text + '</p>';
               });
             }
           })
           .catch((error) => {
-            // Show error message
             document.getElementById('form-message').innerHTML = '<p>There was an error with your submission. Please try again.</p>';
           });
         });
@@ -704,6 +731,18 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  
 
 <style>
 
