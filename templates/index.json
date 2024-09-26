@@ -9,13 +9,25 @@
 */
 {
   "sections": {
-    "splash-redirect": {
-      "type": "splash-redirect",
+    "splash-hero": {
+      "type": "splash-hero",
+      "settings": {
+      }
+    },
+    "splash-mission": {
+      "type": "splash-mission",
+      "settings": {
+      }
+    },
+    "splash-email": {
+      "type": "splash-email",
       "settings": {
       }
     }
   },
   "order": [
-    "splash-redirect"
+    "splash-hero",
+    "splash-mission",
+    "splash-email"
   ]
 }
