@@ -5,6 +5,17 @@
 {% comment %} {% layout 'barebones' %} {% endcomment %}
 
  {{ content_for_header }}
+  <title>Misery & Mayehm</title>
+
+  <script>
+    window.addEventListener('load', function() {
+      if (window.location.search.includes('form_type=customer')) {
+        const url = window.location.href.split('?')[0];
+        window.history.replaceState(null, null, url);
+      }
+    });
+  </script>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
