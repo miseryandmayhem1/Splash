@@ -3,7 +3,8 @@
 .splash-hero {
   width: 100%;
   height: 100vh;
-  max-height: 720px;
+  /* max-height: 750px; */
+  max-height: 63vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +12,14 @@
   position: relative;
   background-color: #000;
   box-sizing: border-box;
+}
+
+@media (min-width: 1400px) {
+
+  .splash-hero {
+    max-height: 900px;
+  }
+
 }
 
 .video-container {
@@ -48,8 +57,8 @@ body {
 
 
 
-{% comment %}
-<section class="splash-hero">
+
+{% comment %} <section class="splash-hero">
   <div class="video-container">
     <iframe
       width="100%"
@@ -60,8 +69,9 @@ body {
       allowfullscreen>
     </iframe>
   </div>
-</section>
- {% endcomment %}
+</section> {% endcomment %}
+
+
 
 
 <section class="splash-hero">
