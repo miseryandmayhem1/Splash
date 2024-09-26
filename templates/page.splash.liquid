@@ -4,14 +4,18 @@
 
 {% comment %} {% layout 'barebones' %} {% endcomment %}
 
-  {% render 'meta-tags' %}
+ {{ content_for_header }}
+  <title>Misery & Mayehm</title>
 
-    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    {%- if settings.animations_reveal_on_scroll -%}
-      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
+  <script>
+    window.addEventListener('load', function() {
+      if (window.location.search.includes('form_type=customer')) {
+        const url = window.location.href.split('?')[0];
+        window.history.replaceState(null, null, url);
+      }
+    });
+  </script>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
