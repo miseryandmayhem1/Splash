@@ -649,8 +649,6 @@ body {
 
 
 
-
-
 <section class="custom-email-section">
   <div class="email-container">
 
@@ -660,17 +658,26 @@ body {
 
     <div class="email-content-container">
 
-      <!-- This will handle the success message display -->
+      <!-- This will handle the success message display and scroll behavior -->
       <script>
-        // Check if the URL contains 'customer_posted=true'
-        const urlParams = new URLSearchParams(window.location.search);
-        const customerPosted = urlParams.get('customer_posted');
+        document.addEventListener('DOMContentLoaded', function () {
+          // Check if the URL contains 'customer_posted=true'
+          const urlParams = new URLSearchParams(window.location.search);
+          const customerPosted = urlParams.get('customer_posted');
 
-        // If 'customer_posted=true', show the success message
-        if (customerPosted === 'true') {
-          document.getElementById('form-message').innerHTML = '<p>Thank you for subscribing!</p>';
-          window.history.replaceState(null, null, window.location.pathname); // Clear query params from the URL
-        }
+          // If 'customer_posted=true', show the success message
+          if (customerPosted === 'true') {
+            // Scroll to the form
+            const formElement = document.getElementById('newsletterForm');
+            formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Display success message
+            document.getElementById('form-message').innerHTML = '<p>Thank you for subscribing!</p>';
+
+            // Remove query parameters from the URL to avoid repeated behavior
+            window.history.replaceState(null, null, window.location.pathname);
+          }
+        });
       </script>
 
       <!-- Newsletter form -->
@@ -687,7 +694,6 @@ body {
 
   </div>
 </section>
-
 
   
 
