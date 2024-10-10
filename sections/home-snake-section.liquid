@@ -1,0 +1,87 @@
+<section class="snake-text-section color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <!-- Snake Image (Left on Desktop, Top on Mobile) -->
+    <div class="snake-image">
+      <img src="{{ section.settings.snake_image | image_url }}" alt="Snake">
+    </div>
+
+    <!-- Text Section (Right on Desktop, Below on Mobile) -->
+    <div class="text-content">
+      <h2>{{ section.settings.header_title }}</h2>
+
+      <p>
+        <span class="highlight">{{ section.settings.text_line_1_highlight }}</span>
+        {{ section.settings.text_line_1 }}
+      </p>
+      <p>
+        <span class="highlight">{{ section.settings.text_line_2_highlight }}</span>
+        {{ section.settings.text_line_2 }}
+      </p>
+      <p>
+        <span class="highlight">{{ section.settings.text_line_3_highlight }}</span>
+        {{ section.settings.text_line_3 }}
+      </p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Snake and Text Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "snake_image",
+      "label": "Snake Image"
+    },
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Header Title Here"
+    },
+    {
+      "type": "text",
+      "id": "text_line_1_highlight",
+      "label": "Text Line 1 Highlight",
+      "default": "Highlighted Words"
+    },
+    {
+      "type": "text",
+      "id": "text_line_1",
+      "label": "Text Line 1",
+      "default": "Normal text for line 1."
+    },
+    {
+      "type": "text",
+      "id": "text_line_2_highlight",
+      "label": "Text Line 2 Highlight",
+      "default": "Highlighted Words"
+    },
+    {
+      "type": "text",
+      "id": "text_line_2",
+      "label": "Text Line 2",
+      "default": "Normal text for line 2."
+    },
+    {
+      "type": "text",
+      "id": "text_line_3_highlight",
+      "label": "Text Line 3 Highlight",
+      "default": "Highlighted Words"
+    },
+    {
+      "type": "text",
+      "id": "text_line_3",
+      "label": "Text Line 3",
+      "default": "Normal text for line 3."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-6"
+    }
+  ]
+}
+{% endschema %}

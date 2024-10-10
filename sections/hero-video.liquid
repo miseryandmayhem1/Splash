@@ -1,0 +1,85 @@
+<section class="hero-video-section">
+  <video class="hero-video"
+    autoplay
+    loop
+    muted playsinline
+   >
+    <!-- Desktop Video -->
+    <source src="https://cdn.shopify.com/videos/c/o/v/f9fc45ef2c9247a0bc82547b74dd66e1.mp4" type="video/mp4" media="(min-width: 768px)">
+    <!-- Mobile Video -->
+    <source src="https://cdn.shopify.com/videos/c/o/v/3f7dd93da299426ca133f7cd5f1243e7.mp4" type="video/mp4" media="(max-width: 767px)">
+
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-content">
+    <!-- Header Text (Desktop: Bottom-Left, Mobile: Top) -->
+    <div class="hero-header-text">
+      <h1>{{ section.settings.header_text }}</h1>
+    </div>
+
+    <!-- Subheader and Button (Desktop: Bottom-Right, Mobile: Bottom) -->
+    <div class="hero-subcontent">
+      <p>{{ section.settings.subheader_text }}</p>
+      <a href="{{ section.settings.button_link }}" class="hero-button">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Video Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop Video",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header Text",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "text",
+      "id": "subheader_text",
+      "label": "Subheader Text",
+      "default": "Discover our latest products"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Hero",
+      "settings": {
+        "autoplay": true,
+        "loop": true,
+        "header_text": "Welcome to Our Store",
+        "subheader_text": "Discover our latest products",
+        "button_link": "/collections/all",
+        "button_text": "Shop Now"
+      }
+    }
+  ]
+}
+{% endschema %}
