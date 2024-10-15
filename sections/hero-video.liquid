@@ -1,3 +1,6 @@
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+
+
 <section class="hero-video-section">
   <video class="hero-video"
     autoplay
@@ -21,7 +24,7 @@
     <!-- Subheader and Button (Desktop: Bottom-Right, Mobile: Bottom) -->
     <div class="hero-subcontent">
       <p>{{ section.settings.subheader_text }}</p>
-      <a href="{{ section.settings.button_link }}" class="hero-button">{{ section.settings.button_text }}</a>
+      <a href="{{ section.settings.button_link }}" class="standard-button hero-button">{{ section.settings.button_text }}</a>
     </div>
   </div>
 </section>

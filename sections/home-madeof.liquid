@@ -1,0 +1,103 @@
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+
+<section class="madeof-section color-{{ section.settings.color_scheme }}">
+  <div class="madeof-header">
+    <!-- Top Left Header -->
+    <div class="madeof-header-left">
+      <h2>{{ section.settings.header_left }}</h2>
+    </div>
+
+    <!-- Top Right Header -->
+    <div class="madeof-header-right">
+      <h2>{{ section.settings.header_right }}</h2>
+    </div>
+  </div>
+
+  <div class="madeof-grid">
+    {% for block in section.blocks %}
+      <div class="grid-item">
+        <div class="grid-number">
+          <strong>{{ block.settings.number }}</strong>
+        </div>
+        <div class="grid-text">
+          <p>{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Made of Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_left",
+      "label": "Header Left",
+      "default": "What It's Made Of"
+    },
+    {
+      "type": "text",
+      "id": "header_right",
+      "label": "Header Right",
+      "default": "Ingredients Breakdown"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "number_with_text",
+      "name": "Made Of Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Bold Number",
+          "default": "50%"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Fiber content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Made of Section",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "number_with_text",
+          "settings": {
+            "number": "50%",
+            "description": "Fiber"
+          }
+        },
+        {
+          "type": "number_with_text",
+          "settings": {
+            "number": "20%",
+            "description": "Sugar"
+          }
+        },
+        {
+          "type": "number_with_text",
+          "settings": {
+            "number": "30%",
+            "description": "Fat"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

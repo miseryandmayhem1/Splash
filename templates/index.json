@@ -13,15 +13,97 @@
     },
     "home-snake-section": {
       "type": "home-snake-section",
+      "blocks": {
+        "text_line_1": {
+          "type": "text_line",
+          "settings": {
+            "highlighted_text": "High protein",
+            "normal_text": "from farm to muscle"
+          }
+        },
+        "text_line_2": {
+          "type": "text_line",
+          "settings": {
+            "highlighted_text": "LOW SUGAR",
+            "normal_text": "for steady power"
+          }
+        },
+        "text_line_3": {
+          "type": "text_line",
+          "settings": {
+            "highlighted_text": "a real meal",
+            "normal_text": "that keeps you full until lunch"
+          }
+        }
+      },
+      "block_order": [
+        "text_line_1",
+        "text_line_2",
+        "text_line_3"
+      ],
       "settings": {
         "snake_image": "shopify:\/\/shop_images\/snake1.png",
-        "header_title": "Discover the Beauty of Nature",
-        "text_line_1_highlight": "High protein",
-        "text_line_1": "from farm to muscle",
-        "text_line_2_highlight": "LOW SUGAR",
-        "text_line_2": "for steady power",
-        "text_line_3_highlight": "a real meal",
-        "text_line_3": "that keeps you full until lunch",
+        "header_title": "BITE OFF SOMETHING YOU CAN CHEW",
+        "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
+      }
+    },
+    "home-madeof": {
+      "type": "home-madeof",
+      "blocks": {
+        "block-1": {
+          "type": "number_with_text",
+          "settings": {
+            "number": "290",
+            "description": "Calories"
+          }
+        },
+        "block-2": {
+          "type": "number_with_text",
+          "settings": {
+            "number": "20 G",
+            "description": "Protein"
+          }
+        },
+        "block-3": {
+          "type": "number_with_text",
+          "settings": {
+            "number": "42 G",
+            "description": "Carbohydrates"
+          }
+        },
+        "block-4": {
+          "type": "number_with_text",
+          "settings": {
+            "number": "6 GS",
+            "description": "Fiber"
+          }
+        },
+        "block-5": {
+          "type": "number_with_text",
+          "settings": {
+            "number": "2-8 G",
+            "description": "Sugar"
+          }
+        },
+        "block-6": {
+          "type": "number_with_text",
+          "settings": {
+            "number": "5-6 G",
+            "description": "Fat"
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-2",
+        "block-3",
+        "block-4",
+        "block-5",
+        "block-6"
+      ],
+      "settings": {
+        "header_left": "WHAT WE’RE  MADE OF",
+        "header_right": "(besides taste)",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
     },
@@ -282,6 +364,7 @@
   "order": [
     "hero_video",
     "home-snake-section",
+    "home-madeof",
     "image_banner",
     "featured_product_ED8MHG",
     "featured_product_E4ea63",

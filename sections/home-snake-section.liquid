@@ -1,26 +1,22 @@
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+
 <section class="snake-text-section color-{{ section.settings.color_scheme }}">
   <div class="container">
     <!-- Snake Image (Left on Desktop, Top on Mobile) -->
     <div class="snake-image">
-      <img src="{{ section.settings.snake_image | image_url }}" alt="Snake">
+      <img src="{{ section.settings.snake_image | image_url }}" width="" height="" alt="Snake">
     </div>
 
     <!-- Text Section (Right on Desktop, Below on Mobile) -->
     <div class="text-content">
       <h2>{{ section.settings.header_title }}</h2>
 
-      <p>
-        <span class="highlight">{{ section.settings.text_line_1_highlight }}</span>
-        {{ section.settings.text_line_1 }}
-      </p>
-      <p>
-        <span class="highlight">{{ section.settings.text_line_2_highlight }}</span>
-        {{ section.settings.text_line_2 }}
-      </p>
-      <p>
-        <span class="highlight">{{ section.settings.text_line_3_highlight }}</span>
-        {{ section.settings.text_line_3 }}
-      </p>
+      {% for block in section.blocks %}
+        <p>
+          <span class="text-highlight">{{ block.settings.highlighted_text }}</span>
+          {{ block.settings.normal_text }}
+        </p>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -41,46 +37,59 @@
       "default": "Header Title Here"
     },
     {
-      "type": "text",
-      "id": "text_line_1_highlight",
-      "label": "Text Line 1 Highlight",
-      "default": "Highlighted Words"
-    },
-    {
-      "type": "text",
-      "id": "text_line_1",
-      "label": "Text Line 1",
-      "default": "Normal text for line 1."
-    },
-    {
-      "type": "text",
-      "id": "text_line_2_highlight",
-      "label": "Text Line 2 Highlight",
-      "default": "Highlighted Words"
-    },
-    {
-      "type": "text",
-      "id": "text_line_2",
-      "label": "Text Line 2",
-      "default": "Normal text for line 2."
-    },
-    {
-      "type": "text",
-      "id": "text_line_3_highlight",
-      "label": "Text Line 3 Highlight",
-      "default": "Highlighted Words"
-    },
-    {
-      "type": "text",
-      "id": "text_line_3",
-      "label": "Text Line 3",
-      "default": "Normal text for line 3."
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color Scheme",
       "default": "scheme-6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_line",
+      "name": "Text Line",
+      "settings": [
+        {
+          "type": "text",
+          "id": "highlighted_text",
+          "label": "Highlighted Text",
+          "default": "Highlighted Words"
+        },
+        {
+          "type": "text",
+          "id": "normal_text",
+          "label": "Normal Text",
+          "default": "Normal text for this line."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Snake and Text Section",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "text_line",
+          "settings": {
+            "highlighted_text": "Explore",
+            "normal_text": "the amazing world of snakes."
+          }
+        },
+        {
+          "type": "text_line",
+          "settings": {
+            "highlighted_text": "Learn",
+            "normal_text": "about different species."
+          }
+        },
+        {
+          "type": "text_line",
+          "settings": {
+            "highlighted_text": "Protect",
+            "normal_text": "these creatures and their habitats."
+          }
+        }
+      ]
     }
   ]
 }
