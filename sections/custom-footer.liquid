@@ -1,0 +1,191 @@
+<footer class="custom-footer">
+  <div class="footer-logo">
+    <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/mm-footer-logo.svg?v=1729092005" alt="Misery & Mayhem">
+  </div>
+
+  <div class="footer-links">
+    <div class="footer-column">
+      <ul>
+        <li><a href="{{ section.settings.link_1_url }}">{{ section.settings.link_1 }}</a></li>
+        <li><a href="{{ section.settings.link_2_url }}">{{ section.settings.link_2 }}</a></li>
+        <li><a href="{{ section.settings.link_3_url }}">{{ section.settings.link_3 }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <ul>
+        <li><a href="{{ section.settings.link_4_url }}">{{ section.settings.link_4 }}</a></li>
+        <li><a href="{{ section.settings.link_5_url }}">{{ section.settings.link_5 }}</a></li>
+        <li><a href="{{ section.settings.link_6_url }}">{{ section.settings.link_6 }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <ul>
+        <li><a href="{{ section.settings.link_7_url }}">{{ section.settings.link_7 }}</a></li>
+        <li><a href="{{ section.settings.link_8_url }}">{{ section.settings.link_8 }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column copyright-column">
+      <p>{{ section.settings.copyright_text }}</p>
+    </div>
+  </div>
+
+  {% if section.settings.newsletter_enable %}
+  <div class="newsletter-section">
+    <h2>{{ section.settings.newsletter_heading }}</h2>
+    {% form 'customer' %}
+      <input type="email" name="contact[email]" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    {% endform %}
+  </div>
+  {% endif %}
+
+  {% if section.settings.show_social %}
+  <div class="social-icons">
+    {{ 'social-icons' | placeholder_svg }} <!-- Example for social icons -->
+  </div>
+  {% endif %}
+
+  {% if section.settings.enable_country_selector %}
+  <div class="country-selector">
+    {{ form | country_selector }}
+  </div>
+  {% endif %}
+
+  {% if section.settings.enable_language_selector %}
+  <div class="language-selector">
+    {{ form | language_selector }}
+  </div>
+  {% endif %}
+
+  {% if section.settings.payment_enable %}
+  <div class="payment-icons">
+    {{ 'payment-icons' | placeholder_svg }} <!-- Example for payment icons -->
+  </div>
+  {% endif %}
+</footer>
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "link_1",
+      "label": "Link 1 Text",
+      "default": "Shop"
+    },
+    {
+      "type": "url",
+      "id": "link_1_url",
+      "label": "Link 1 URL",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "link_2",
+      "label": "Link 2 Text",
+      "default": "About"
+    },
+    {
+      "type": "url",
+      "id": "link_2_url",
+      "label": "Link 2 URL",
+      "default": "/pages/about"
+    },
+    {
+      "type": "text",
+      "id": "link_3",
+      "label": "Link 3 Text",
+      "default": "Contact"
+    },
+    {
+      "type": "url",
+      "id": "link_3_url",
+      "label": "Link 3 URL",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "text",
+      "id": "link_4",
+      "label": "Link 4 Text",
+      "default": "FAQs"
+    },
+    {
+      "type": "url",
+      "id": "link_4_url",
+      "label": "Link 4 URL",
+      "default": "/pages/faqs"
+    },
+    {
+      "type": "text",
+      "id": "link_5",
+      "label": "Link 5 Text",
+      "default": "Shipping"
+    },
+    {
+      "type": "url",
+      "id": "link_5_url",
+      "label": "Link 5 URL",
+      "default": "/pages/shipping"
+    },
+    {
+      "type": "text",
+      "id": "link_6",
+      "label": "Link 6 Text",
+      "default": "Returns"
+    },
+    {
+      "type": "url",
+      "id": "link_6_url",
+      "label": "Link 6 URL",
+      "default": "/pages/returns"
+    },
+    {
+      "type": "text",
+      "id": "link_7",
+      "label": "Privacy Policy",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "url",
+      "id": "link_7_url",
+      "label": "Privacy Policy URL",
+      "default": "/pages/privacy-policy"
+    },
+    {
+      "type": "text",
+      "id": "link_8",
+      "label": "Terms of Service",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "url",
+      "id": "link_8_url",
+      "label": "Terms of Service URL",
+      "default": "/pages/terms-of-service"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "©2024 Misery & Mayhem"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer",
+      "category": "Footer"
+    }
+  ]
+}
+
+
+{% endschema %}

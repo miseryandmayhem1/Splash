@@ -7,7 +7,7 @@
         "loop": true,
         "header_text": "Don't Struggle Hungry",
         "subheader_text": "Our protein-packed oatmeal is as tough as the day ahead. After breakfast, you’re on your own.",
-        "button_link": "\/collections\/all",
+        "button_link": "/collections/all",
         "button_text": "Explore Oatmeals"
       }
     },
@@ -36,13 +36,9 @@
           }
         }
       },
-      "block_order": [
-        "text_line_1",
-        "text_line_2",
-        "text_line_3"
-      ],
+      "block_order": ["text_line_1", "text_line_2", "text_line_3"],
       "settings": {
-        "snake_image": "shopify:\/\/shop_images\/snake1.png",
+        "snake_image": "shopify://shop_images/snake1.png",
         "header_title": "BITE OFF SOMETHING YOU CAN CHEW",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
@@ -107,6 +103,14 @@
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
     },
+    "home-email": {
+      "type": "home-email",
+      "settings": {
+        "header_title": "Be the first to know",
+        "sub_text": "Join our newsletter to stay updated.",
+        "button_text": "Subscribe"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -121,7 +125,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -129,12 +133,9 @@
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["heading", "button"],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2024-05-07_at_12.24.50_PM.png",
+        "image": "shopify://shop_images/Screenshot_2024-05-07_at_12.24.50_PM.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "bottom-right",
@@ -165,8 +166,7 @@
         },
         "price_eahfAJ": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_VdMxER": {
           "type": "variant_picker",
@@ -177,8 +177,7 @@
         },
         "quantity_selector_hjFJWa": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_YHymBb": {
           "type": "buy_buttons",
@@ -236,8 +235,7 @@
         },
         "price_X7Gfb3": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_rF7qNj": {
           "type": "variant_picker",
@@ -248,8 +246,7 @@
         },
         "quantity_selector_tFHWYD": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_77g3Aw": {
           "type": "buy_buttons",
@@ -307,8 +304,7 @@
         },
         "price_XTJpwR": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_AmXaiD": {
           "type": "variant_picker",
@@ -319,8 +315,7 @@
         },
         "quantity_selector_F9Appi": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_h8JA4D": {
           "type": "buy_buttons",
@@ -365,6 +360,7 @@
     "hero_video",
     "home-snake-section",
     "home-madeof",
+    "home-email",
     "image_banner",
     "featured_product_ED8MHG",
     "featured_product_E4ea63",

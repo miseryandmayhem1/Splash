@@ -78,6 +78,80 @@ h2 {
   font-weight: bold;
 }
 
+/* custom footer ------------------------------------------------------------ */
+
+.custom-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.footer-logo {
+  flex: 1 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.footer-column {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #f7ce48;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.copyright-column {
+  text-align: left;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.footer-column p {
+  margin-top: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .copyright-column {
+    text-align: center;
+  }
+}
+
 /* home hero video ------------------------------------------------------------ */
 
 .hero-video-section {
@@ -275,5 +349,166 @@ h2 {
 
   .madeof-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* home email ------------------------------------------------------------ */
+
+.home-email {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcf7ea;
+  box-sizing: border-box;
+}
+
+.email-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  width: 100%;
+  padding: 80px 40px;
+  max-width: 1280px;
+  background: #f7ce48;
+  border-radius: 20px;
+  margin: 0 40px;
+}
+
+.email-title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.email-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 16px;
+}
+
+.email-content-container p {
+  margin: 0;
+  max-width: 390px;
+  text-transform: uppercase;
+}
+
+.email-header {
+  font-size: 34px;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  padding-left: 40px;
+  max-width: 300px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.email-input {
+  padding: 14px;
+  padding-left: 0;
+  font-size: 16px;
+  border: 0 none;
+  background-color: transparent;
+  border-bottom: 1px solid #1a1a1a;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.email-input::placeholder {
+  color: #1a1a1a;
+  opacity: 1;
+}
+
+.email-submit-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: #f7ce48;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.email-submit-button:hover {
+  background-color: #333;
+}
+
+/* Media Queries */
+
+/* Tablet devices (768px and smaller) */
+@media (max-width: 900px) {
+  .email-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 20px;
+    margin: 0 20px;
+  }
+
+  .email-header {
+    padding-left: 0;
+    text-align: left;
+    max-width: 800%;
+  }
+
+  .email-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Mobile devices (480px and smaller) */
+@media (max-width: 768px) {
+  .email-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    position: relative;
+    width: 100%;
+    border-radius: 0px;
+    margin: 0;
+  }
+
+  .email-header {
+    font-size: 34px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .email-content-container {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .email-content-container p {
+    max-width: 100%;
+  }
+
+  .email-input {
+    width: 100%;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+    width: 100%;
+  }
+
+  .email-input {
+    margin-bottom: 20px;
   }
 }
