@@ -1,71 +1,42 @@
 <footer class="custom-footer">
   <div class="footer-logo">
-    <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/mm-footer-logo.svg?v=1729092005" alt="Misery & Mayhem">
+    <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/mm-footer-logo.svg?v=1729092005" width="" height="">
   </div>
 
   <div class="footer-links">
+    <!-- Column 1 -->
     <div class="footer-column">
       <ul>
-        <li><a href="{{ section.settings.link_1_url }}">{{ section.settings.link_1 }}</a></li>
-        <li><a href="{{ section.settings.link_2_url }}">{{ section.settings.link_2 }}</a></li>
-        <li><a href="{{ section.settings.link_3_url }}">{{ section.settings.link_3 }}</a></li>
+        <li><a href="{{ section.settings.link_1_url | default: '#' }}">{{ section.settings.link_1 }}</a></li>
+        <li><a href="{{ section.settings.link_2_url | default: '#' }}">{{ section.settings.link_2 }}</a></li>
+        <li><a href="{{ section.settings.link_3_url | default: '#' }}">{{ section.settings.link_3 }}</a></li>
       </ul>
     </div>
 
+    <!-- Column 2 -->
     <div class="footer-column">
       <ul>
-        <li><a href="{{ section.settings.link_4_url }}">{{ section.settings.link_4 }}</a></li>
-        <li><a href="{{ section.settings.link_5_url }}">{{ section.settings.link_5 }}</a></li>
-        <li><a href="{{ section.settings.link_6_url }}">{{ section.settings.link_6 }}</a></li>
+        <li><a href="{{ section.settings.link_4_url | default: '#' }}">{{ section.settings.link_4 }}</a></li>
+        <li><a href="{{ section.settings.link_5_url | default: '#' }}">{{ section.settings.link_5 }}</a></li>
+        <li><a href="{{ section.settings.link_6_url | default: '#' }}">{{ section.settings.link_6 }}</a></li>
       </ul>
     </div>
 
+    <!-- Column 3 -->
     <div class="footer-column">
       <ul>
-        <li><a href="{{ section.settings.link_7_url }}">{{ section.settings.link_7 }}</a></li>
-        <li><a href="{{ section.settings.link_8_url }}">{{ section.settings.link_8 }}</a></li>
+        <li><a href="{{ section.settings.link_7_url | default: '#' }}">{{ section.settings.link_7 }}</a></li>
+        <li><a href="{{ section.settings.link_8_url | default: '#' }}">{{ section.settings.link_8 }}</a></li>
       </ul>
     </div>
 
+    <!-- Column 4 (Copyright) -->
     <div class="footer-column copyright-column">
       <p>{{ section.settings.copyright_text }}</p>
     </div>
   </div>
-
-  {% if section.settings.newsletter_enable %}
-  <div class="newsletter-section">
-    <h2>{{ section.settings.newsletter_heading }}</h2>
-    {% form 'customer' %}
-      <input type="email" name="contact[email]" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    {% endform %}
-  </div>
-  {% endif %}
-
-  {% if section.settings.show_social %}
-  <div class="social-icons">
-    {{ 'social-icons' | placeholder_svg }} <!-- Example for social icons -->
-  </div>
-  {% endif %}
-
-  {% if section.settings.enable_country_selector %}
-  <div class="country-selector">
-    {{ form | country_selector }}
-  </div>
-  {% endif %}
-
-  {% if section.settings.enable_language_selector %}
-  <div class="language-selector">
-    {{ form | language_selector }}
-  </div>
-  {% endif %}
-
-  {% if section.settings.payment_enable %}
-  <div class="payment-icons">
-    {{ 'payment-icons' | placeholder_svg }} <!-- Example for payment icons -->
-  </div>
-  {% endif %}
 </footer>
+
 
 {% schema %}
 {
@@ -85,8 +56,7 @@
     {
       "type": "url",
       "id": "link_1_url",
-      "label": "Link 1 URL",
-      "default": "/collections/all"
+      "label": "Link 1 URL"
     },
     {
       "type": "text",
@@ -97,8 +67,7 @@
     {
       "type": "url",
       "id": "link_2_url",
-      "label": "Link 2 URL",
-      "default": "/pages/about"
+      "label": "Link 2 URL"
     },
     {
       "type": "text",
@@ -109,8 +78,7 @@
     {
       "type": "url",
       "id": "link_3_url",
-      "label": "Link 3 URL",
-      "default": "/pages/contact"
+      "label": "Link 3 URL"
     },
     {
       "type": "text",
@@ -121,8 +89,7 @@
     {
       "type": "url",
       "id": "link_4_url",
-      "label": "Link 4 URL",
-      "default": "/pages/faqs"
+      "label": "Link 4 URL"
     },
     {
       "type": "text",
@@ -133,44 +100,37 @@
     {
       "type": "url",
       "id": "link_5_url",
-      "label": "Link 5 URL",
-      "default": "/pages/shipping"
+      "label": "Link 5 URL"
     },
     {
       "type": "text",
       "id": "link_6",
-      "label": "Link 6 Text",
-      "default": "Returns"
+      "label": "Returns"
     },
     {
       "type": "url",
       "id": "link_6_url",
-      "label": "Link 6 URL",
-      "default": "/pages/returns"
+      "label": "Returns URL"
     },
     {
       "type": "text",
       "id": "link_7",
-      "label": "Privacy Policy",
-      "default": "Privacy Policy"
+      "label": "Privacy Policy"
     },
     {
       "type": "url",
       "id": "link_7_url",
-      "label": "Privacy Policy URL",
-      "default": "/pages/privacy-policy"
+      "label": "Privacy Policy URL"
     },
     {
       "type": "text",
       "id": "link_8",
-      "label": "Terms of Service",
-      "default": "Terms of Service"
+      "label": "Terms of Service"
     },
     {
       "type": "url",
       "id": "link_8_url",
-      "label": "Terms of Service URL",
-      "default": "/pages/terms-of-service"
+      "label": "Terms of Service URL"
     },
     {
       "type": "text",
@@ -186,6 +146,4 @@
     }
   ]
 }
-
-
 {% endschema %}
