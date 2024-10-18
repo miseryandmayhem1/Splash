@@ -153,6 +153,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Screenshot_2024-05-07_at_12.24.50_PM.png",
         "image_overlay_opacity": 40,
@@ -223,6 +224,7 @@
         "buy_buttons_YHymBb",
         "share_c8AUQk"
       ],
+      "disabled": true,
       "settings": {
         "product": "apple-cinnamon-protein-oatmeal",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",
@@ -294,6 +296,7 @@
         "buy_buttons_77g3Aw",
         "share_ALXdTd"
       ],
+      "disabled": true,
       "settings": {
         "product": "classic-protein-oatmeal",
         "color_scheme": "scheme-3",
@@ -365,6 +368,7 @@
         "buy_buttons_h8JA4D",
         "share_LqDHYh"
       ],
+      "disabled": true,
       "settings": {
         "product": "maple-protein-oatmeal",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",

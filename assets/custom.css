@@ -26,7 +26,7 @@ body {
   width: 100%;
   min-width: 100vw;
   z-index: 1000;
-  background-color: transparent; /* Transparent background */
+  background-color: transparent;
   transition: background-color 0.3s ease;
 }
 
@@ -42,6 +42,7 @@ body {
 }
 
 .standard-button {
+  border: 0 none;
   background-color: #f7ce48;
   border-radius: 100px;
   padding: 10px 20px;
@@ -64,6 +65,7 @@ h2 {
   font-size: 51px;
   line-height: 1.1em;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 .text-highlight {
@@ -76,6 +78,19 @@ h2 {
   display: inline-block;
   vertical-align: middle;
   font-weight: bold;
+}
+
+.header__menu-item {
+  font-family: "Antarctican Headline";
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 990px) {
+  .header--middle-left {
+    grid-template-columns: auto 150px 80px;
+  }
 }
 
 /* custom footer ------------------------------------------------------------ */
@@ -122,20 +137,25 @@ h2 {
   margin-bottom: 10px;
 }
 
+.copyright-column {
+  text-align: left;
+  /* font-size: 14px;
+  color: #bbb; */
+}
+
+.copyright-column,
 .footer-column ul li a {
   color: #f7ce48;
   text-decoration: none;
   font-size: 14px;
+  font-family: "Antarctican Headline";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .footer-column ul li a:hover {
   text-decoration: underline;
-}
-
-.copyright-column {
-  text-align: left;
-  font-size: 14px;
-  color: #bbb;
 }
 
 .footer-column p {
@@ -153,6 +173,12 @@ h2 {
   .copyright-column {
     text-align: center;
   }
+}
+
+.main-contain {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* home hero video ------------------------------------------------------------ */
@@ -547,14 +573,31 @@ h2 {
   gap: 15px;
 }
 
-.add-to-cart {
-  padding: 12px 20px;
-  background-color: #1a1a1a;
-  color: #f7ce48;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+/* .standard-button {
+  background-color: #f7ce48;
+  border-radius: 100px;
+  padding: 10px 20px;
+  color: #1a1a1a;
   text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+} */
+
+.add-to-cart {
+  border: 0px;
+  background-color: #f7ce48;
+  border-radius: 100px;
+  padding: 10px 20px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .price-wrapper {

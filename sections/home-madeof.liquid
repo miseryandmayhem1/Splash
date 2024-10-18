@@ -1,6 +1,7 @@
 {{ 'custom.css' | asset_url | stylesheet_tag }}
 
 <section class="madeof-section color-{{ section.settings.color_scheme }}">
+  <div class="main-contain">
   <div class="madeof-header">
     <!-- Top Left Header -->
     <div class="madeof-header-left">
@@ -24,6 +25,7 @@
         </div>
       </div>
     {% endfor %}
+  </div>
   </div>
 </section>
 

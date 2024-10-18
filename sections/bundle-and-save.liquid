@@ -1,6 +1,6 @@
 <section class="bundle-and-save-section color-{{ section.settings.color_scheme }}">
+  <div class="main-contain">
   <div class="bundle-content">
-
     <!-- Left Side: Title, Description, Button, Prices -->
     <div class="left-content">
       <h2>{{ section.settings.title }}</h2>
@@ -14,7 +14,7 @@
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
           <!-- Add to Cart Button -->
-          <button type="submit" class="add-to-cart">{{ section.settings.button_text }}</button>
+          <button type="submit" class="standard-button">{{ section.settings.button_text }}</button>
 
           <!-- Prices next to button -->
           <div class="price-wrapper">
@@ -34,6 +34,7 @@
       <img src="{{ section.settings.bundle_image | image_url }}" alt="Bundle Image">
     </div>
 
+  </div>
   </div>
 </section>
 
