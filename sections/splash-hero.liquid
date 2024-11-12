@@ -1,0 +1,174 @@
+<style>
+
+@font-face {
+  font-family: "Fustat";
+  src: url('{{ "Fustat-Light.ttf" | asset_url }}') format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url('{{ "Fustat-Regular.woff2" | asset_url }}') format("woff2"),
+    url('{{ "Fustat-Regular.woff" | asset_url }}') format("woff"),
+    url('{{ "Fustat-VariableFont_wght.ttf" | asset_url }}') format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url('{{ "Fustat-SemiBold.ttf" | asset_url }}') format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url('{{ "Fustat-Bold.ttf" | asset_url }}') format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fustat";
+  src: url('{{ "Fustat-ExtraBold.ttf" | asset_url }}') format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fustat',Arial, Helvetica, sans-serif;
+    /* font-family: 'Fustat'; */
+    font-weight: 400;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 26px;
+    background-color:  #FCF7EA;
+  }
+</style>
+
+
+
+
+<style>
+.splash-hero {
+  width: 100%;
+  height: 100vh;
+  /* max-height: 750px; */
+  max-height: 63vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+.splash-hero-mobile {
+  width: 100%;
+  height: 100vh;
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1400px) {
+
+  .splash-hero {
+    max-height: 900px;
+  }
+
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 20px;
+  right: auto;
+  left: auto;
+}
+
+@media (max-width: 767px) {
+
+  .splash-hero-mobile {display: flex;}
+  .splash-hero {display: none;}
+
+}
+
+@media (min-width: 768px) {
+  .splash-hero-mobile {display: none;}
+  .splash-hero {display: flex;}
+
+}
+
+</style>
+
+
+
+
+
+
+{% comment %} <section class="splash-hero">
+  <div class="video-container">
+    <iframe
+      width="100%"
+      height="100%"
+      src="https://www.youtube.com/embed/yiRJ6XNuuwI?controls=0&modestbranding=1&rel=0&iv_load_policy=3&fs=0"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section> {% endcomment %}
+
+
+<section class="splash-hero-mobile">
+  <div class="video-container">
+    <video controls playsinline width="100%" height="100%" class="html5-video">
+      <source src="https://cdn.shopify.com/videos/c/o/v/2de66cc8d93e4e29aa3b24b868d25fc6.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/hero-vid-logo.png?v=1727143751" width="142" height="42" alt="Misery & Mayem Intro Video" class="hero-image">
+</section>
+
+<section class="splash-hero">
+  <div class="video-container">
+    <video controls playsinline width="100%" height="100%" class="html5-video">
+      <source src="https://cdn.shopify.com/videos/c/o/v/a22d27a3235f47a291b620fd4a5d1434.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/hero-vid-logo.png?v=1727143751" width="142" height="42" alt="Misery & Mayem Intro Video" class="hero-image">
+</section>
