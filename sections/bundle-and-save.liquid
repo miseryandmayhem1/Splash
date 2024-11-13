@@ -18,7 +18,7 @@
 
           <!-- Prices next to button -->
           <div class="price-wrapper">
-            <span class="sale-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+            <span class="sale-price text-highlight">{{ product.selected_or_first_available_variant.price | money }}</span>
             {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
               <span class="original-price"><s>{{ product.selected_or_first_available_variant.compare_at_price | money }}</s></span>
             {% endif %}

@@ -11,6 +11,44 @@
         "button_text": "Explore Oatmeals"
       }
     },
+    "home-featured-products": {
+      "type": "home-featured-products",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product": "classic-protein-oatmeal",
+            "custom_text_1": "20G OF PROTEIN",
+            "custom_text_2": "4G OF SUGAR"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product": "apple-cinnamon-protein-oatmeal",
+            "custom_text_1": "20G OF PROTEIN",
+            "custom_text_2": "4G OF SUGAR"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product": "maple-protein-oatmeal",
+            "custom_text_1": "20G OF PROTEIN",
+            "custom_text_2": "4G OF SUGAR"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ],
+      "settings": {
+        "header_title": "Meet the Oats",
+        "collection": "your-collection-handle"
+      }
+    },
     "home-snake-section": {
       "type": "home-snake-section",
       "blocks": {
@@ -186,8 +224,7 @@
         },
         "price_eahfAJ": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_VdMxER": {
           "type": "variant_picker",
@@ -198,8 +235,7 @@
         },
         "quantity_selector_hjFJWa": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_YHymBb": {
           "type": "buy_buttons",
@@ -258,8 +294,7 @@
         },
         "price_X7Gfb3": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_rF7qNj": {
           "type": "variant_picker",
@@ -270,8 +305,7 @@
         },
         "quantity_selector_tFHWYD": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_77g3Aw": {
           "type": "buy_buttons",
@@ -330,8 +364,7 @@
         },
         "price_XTJpwR": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_AmXaiD": {
           "type": "variant_picker",
@@ -342,8 +375,7 @@
         },
         "quantity_selector_F9Appi": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_h8JA4D": {
           "type": "buy_buttons",
@@ -387,10 +419,11 @@
   },
   "order": [
     "hero_video",
+    "home-featured-products",
     "home-snake-section",
     "home-madeof",
-    "home-email",
     "bundle-and-save",
+    "home-email",
     "image_banner",
     "featured_product_ED8MHG",
     "featured_product_E4ea63",

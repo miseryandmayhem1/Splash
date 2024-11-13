@@ -1,10 +1,11 @@
 {{ 'custom.css' | asset_url | stylesheet_tag }}
 
 <section class=" snake-text-section color-{{ section.settings.color_scheme }}">
+  <img src="{{ section.settings.snake_image | image_url }}" class="home-snake" width="" height="" alt="Snake">
   <div class="container main-contain">
     <!-- Snake Image (Left on Desktop, Top on Mobile) -->
     <div class="snake-image">
-      <img src="{{ section.settings.snake_image | image_url }}" width="" height="" alt="Snake">
+
     </div>
 
     <!-- Text Section (Right on Desktop, Below on Mobile) -->

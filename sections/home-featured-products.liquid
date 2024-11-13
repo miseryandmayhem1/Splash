@@ -1,0 +1,80 @@
+<section class="home-featured-products">
+<div class="main-contain">
+  <div class="header-area">
+    <h2>{{ section.settings.header_title }}</h2>
+    <a href="{{ section.settings.collection | link }}" class="standard-button">Shop All</a>
+  </div>
+
+  <!-- Product Columns -->
+  <div class="product-columns">
+    {% for block in section.blocks %}
+      <div class="product-column">
+        <a class="home-product-link" href="{{ block.settings.product | product_url }}">
+          <img src="{{ block.settings.product.featured_image | img_url: '300x' }}" alt="{{ block.settings.product.title }}" width="" height="">
+          <h3 class="home-featured-product-title">{{ block.settings.product.title }}</h3>
+
+        <p>{{ block.settings.custom_text_1 }}</p>
+        <p>{{ block.settings.custom_text_2 }}</p>
+        <span class="price text-highlight">{{ block.settings.product.price | money }}</span>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Shop All Collection"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "text",
+          "id": "custom_text_1",
+          "label": "Custom Text Line 1"
+        },
+        {
+          "type": "text",
+          "id": "custom_text_2",
+          "label": "Custom Text Line 2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products Section",
+      "category": "Home Page"
+    }
+  ]
+}
+
+{% endschema %}
