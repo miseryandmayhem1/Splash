@@ -46,7 +46,8 @@
       ],
       "settings": {
         "header_title": "Meet the Oats",
-        "collection": "your-collection-handle"
+        "collection": "your-collection-handle",
+        "color_scheme": ""
       }
     },
     "home-snake-section": {
@@ -145,12 +146,12 @@
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
     },
-    "home-email": {
-      "type": "home-email",
+    "home-breakfast-chart": {
+      "type": "home-breakfast-chart",
       "settings": {
-        "header_title": "Join the Mayhem",
-        "sub_text": "Join our newsletter to stay updated.",
-        "button_text": "Join Now"
+        "heading": "The Best Breakfast for the Job",
+        "image": "shopify:\/\/shop_images\/Chart_d59c3658-3bbc-4dd9-a214-d185ec5f1fc3.png",
+        "alt_text": "Misery &amp; Mayhem is, pound for pound, better than all other breakfast options listed here."
       }
     },
     "bundle-and-save": {
@@ -163,6 +164,14 @@
         "bundle_image": "shopify:\/\/shop_images\/bundle-and-save.png",
         "button_text": "Add to Cart",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
+      }
+    },
+    "home-email": {
+      "type": "home-email",
+      "settings": {
+        "header_title": "Join the Mayhem",
+        "sub_text": "Join our newsletter to stay updated.",
+        "button_text": "Join Now"
       }
     },
     "image_banner": {
@@ -422,6 +431,7 @@
     "home-featured-products",
     "home-snake-section",
     "home-madeof",
+    "home-breakfast-chart",
     "bundle-and-save",
     "home-email",
     "image_banner",

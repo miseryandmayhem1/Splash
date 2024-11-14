@@ -325,11 +325,12 @@ h2 {
   line-height: 20px;
 }
 
-.home-featured-products .price {
+.home-featured-products .feat-price {
   font-weight: 400;
   margin: 0;
   font-size: 16px;
   line-height: 20px;
+  font-weight: bold;
 }
 
 /* Mobile Styles */
@@ -475,6 +476,30 @@ h2 {
 
   .madeof-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* home breakfast chart ------------------------------------------------------------ */
+.home-breakfast-chart-section {
+  text-align: left;
+  background-color: #fcf7ea;
+  padding: 100px 40px;
+  display: block;
+}
+
+.home-breakfast-chart-section h2 {
+  margin-bottom: 64px;
+}
+
+.home-breakfast-chart-section .home-breakfast-chart-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .home-breakfast-chart-section {
+    display: none;
   }
 }
 
