@@ -1,6 +1,6 @@
 {{ 'custom.css' | asset_url | stylesheet_tag }}
 
-<section class=" snake-text-section color-{{ section.settings.color_scheme }}">
+<section class="home-snake-section snake-text-section color-{{ section.settings.color_scheme }}">
   <img src="{{ section.settings.snake_image | image_url }}" class="home-snake" width="" height="" alt="Snake">
   <div class="container main-contain">
     <!-- Snake Image (Left on Desktop, Top on Mobile) -->
@@ -10,7 +10,7 @@
 
     <!-- Text Section (Right on Desktop, Below on Mobile) -->
     <div class="text-content">
-      <h2>{{ section.settings.header_title }}</h2>
+      <h2 class="mob-lrg">{{ section.settings.header_title }}</h2>
 
       {% for block in section.blocks %}
         <p>

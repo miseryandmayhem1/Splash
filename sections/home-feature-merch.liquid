@@ -1,0 +1,62 @@
+<section class="home-feature-merch color-{{ section.settings.color_scheme }}">
+  <div class="main-contain">
+  <div class="container">
+    <!-- First Column: Title and Button -->
+    <div class="merch-column intro-column">
+      <h2 class="mob-lrg">{{ section.settings.header_title }}</h2>
+      <a href="{{ section.settings.collection | link }}" class="standard-button home-merch-btn">Shop All</a>
+    </div>
+
+    <!-- Product Columns -->
+    {% for block in section.blocks %}
+      <div class="merch-column product-column">
+        <a href="{{ block.settings.product | product_url }}" class="home-merch-link">
+          <img src="{{ block.settings.product.featured_image | img_url: '300x' }}" alt="{{ block.settings.product.title }}" width="" height="">
+          <h3>{{ block.settings.product.title }}</h3>
+          <span class="merch-price text-highlight">{{ block.settings.product.price | money }}</span>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Feature Merch",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "ROCK THE MAYHEM"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Shop All Collection"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Select Product" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Feature Merch",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

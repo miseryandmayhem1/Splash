@@ -1,0 +1,70 @@
+<section class="home-social color-{{ section.settings.color_scheme }}">
+  <div class="main-contain">
+    <div class="container">
+      <h2 class="mob-lrg">{{ section.settings.heading }}</h2>
+      <div class="social-links">
+        <div class="social-column">
+          <a href="{{ section.settings.instagram_link }}" target="_blank">
+            <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/insta.svg?v=1731611273" alt="Instagram" width="100%" height="auto">
+          </a>
+        </div>
+        <div class="social-column">
+          <a href="{{ section.settings.tiktok_link }}" target="_blank">
+            <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/TikTok.svg?v=1731611273" alt="TikTok" width="100%" height="auto">
+          </a>
+        </div>
+        <div class="social-column">
+          <a href="{{ section.settings.facebook_link }}" target="_blank">
+            <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/Facebook.svg?v=1731611273" alt="Facebook" width="100%" height="auto">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Social",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tag us on social"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram Link"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "TikTok Link"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook Link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "options": [
+        { "value": "default", "label": "Default" },
+        { "value": "scheme-light", "label": "Light" },
+        { "value": "scheme-dark", "label": "Dark" }
+      ],
+      "default": "default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Social",
+      "category": "Social"
+    }
+  ]
+}
+{% endschema %}

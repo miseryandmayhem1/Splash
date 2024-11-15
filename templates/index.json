@@ -7,7 +7,7 @@
         "loop": true,
         "header_text": "Don't Struggle Hungry",
         "subheader_text": "Our protein-packed oatmeal is as tough as the day ahead. After breakfast, you’re on your own.",
-        "button_link": "\/collections\/all",
+        "button_link": "/collections/all",
         "button_text": "Explore Oatmeals"
       }
     },
@@ -39,11 +39,7 @@
           }
         }
       },
-      "block_order": [
-        "product_1",
-        "product_2",
-        "product_3"
-      ],
+      "block_order": ["product_1", "product_2", "product_3"],
       "settings": {
         "header_title": "Meet the Oats",
         "collection": "your-collection-handle",
@@ -75,13 +71,9 @@
           }
         }
       },
-      "block_order": [
-        "text_line_1",
-        "text_line_2",
-        "text_line_3"
-      ],
+      "block_order": ["text_line_1", "text_line_2", "text_line_3"],
       "settings": {
-        "snake_image": "shopify:\/\/shop_images\/snake1.png",
+        "snake_image": "shopify://shop_images/snake1.png",
         "header_title": "BITE OFF SOMETHING YOU CAN CHEW",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
@@ -150,7 +142,7 @@
       "type": "home-breakfast-chart",
       "settings": {
         "heading": "The Best Breakfast for the Job",
-        "image": "shopify:\/\/shop_images\/Chart_d59c3658-3bbc-4dd9-a214-d185ec5f1fc3.png",
+        "image": "shopify://shop_images/Chart_d59c3658-3bbc-4dd9-a214-d185ec5f1fc3.png",
         "alt_text": "Misery &amp; Mayhem is, pound for pound, better than all other breakfast options listed here."
       }
     },
@@ -161,8 +153,47 @@
         "description": "Get all three products for one low price!",
         "second_description": "1 Classic<br>\n1 Apple Cinnamon<br>\n1 Maple",
         "bundle_product": "oatmeal-bundle",
-        "bundle_image": "shopify:\/\/shop_images\/bundle-and-save.png",
+        "bundle_image": "shopify://shop_images/bundle-and-save.png",
         "button_text": "Add to Cart",
+        "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
+      }
+    },
+    "home-feature-merch": {
+      "type": "home-feature-merch",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product": "t-shirt1"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product": "t-shirt2"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product": "hat-1"
+          }
+        }
+      },
+      "block_order": ["product_1", "product_2", "product_3"],
+      "settings": {
+        "header_title": "ROCK THE MAYHEM",
+        "collection": "merch",
+        "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
+      }
+    },
+    "home-social": {
+      "type": "home-social",
+      "settings": {
+        "heading": "Tag us on social",
+        "instagram_link": "",
+        "tiktok_link": "",
+        "facebook_link": "",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
     },
@@ -188,7 +219,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -196,13 +227,10 @@
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["heading", "button"],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2024-05-07_at_12.24.50_PM.png",
+        "image": "shopify://shop_images/Screenshot_2024-05-07_at_12.24.50_PM.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "bottom-right",
@@ -433,6 +461,8 @@
     "home-madeof",
     "home-breakfast-chart",
     "bundle-and-save",
+    "home-feature-merch",
+    "home-social",
     "home-email",
     "image_banner",
     "featured_product_ED8MHG",

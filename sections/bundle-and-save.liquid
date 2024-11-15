@@ -3,7 +3,7 @@
   <div class="bundle-content">
     <!-- Left Side: Title, Description, Button, Prices -->
     <div class="left-content">
-      <h2>{{ section.settings.title }}</h2>
+      <h2 class="mob-lrg">{{ section.settings.title }}</h2>
       <p>{{ section.settings.description }}</p>
       <p>{{ section.settings.second_description }}</p>
 
@@ -31,7 +31,7 @@
 
     <!-- Right Side: Image -->
     <div class="right-content">
-      <img src="{{ section.settings.bundle_image | image_url }}" alt="Bundle Image">
+      <img src="{{ section.settings.bundle_image | image_url }}" alt="Bundle Image" class="home-bundle-image" width="" height="">
     </div>
 
   </div>
