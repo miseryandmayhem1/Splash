@@ -1,27 +1,34 @@
 <section class="home-featured-products">
-<div class="main-contain">
-  <div class="header-area">
-    <h2>{{ section.settings.header_title }}</h2>
-    <a href="{{ section.settings.collection | link }}" class="standard-button">Shop All</a>
-  </div>
+  <div class="main-contain">
+    <div class="header-area">
+      <h2>{{ section.settings.header_title }}</h2>
+      <a href="{{ section.settings.collection.url }}" class="standard-button">Shop All</a>
+    </div>
 
-  <!-- Product Columns -->
-  <div class="product-columns">
-    {% for block in section.blocks %}
+    <!-- Product Columns -->
+<div class="product-columns">
+  {% for block in section.blocks %}
+    {% if block.settings.product %}
       <div class="product-column">
-        <a class="home-product-link" href="{{ block.settings.product | product_url }}">
+        <a class="home-product-link" href="/products/{{ block.settings.product.handle }}">
           <img src="{{ block.settings.product.featured_image | img_url: '300x' }}" alt="{{ block.settings.product.title }}" width="" height="">
           <h3 class="home-featured-product-title">{{ block.settings.product.title }}</h3>
-
-        <p>{{ block.settings.custom_text_1 }}</p>
-        <p>{{ block.settings.custom_text_2 }}</p>
-        <span class="feat-price text-highlight">{{ block.settings.product.price | money }}</span>
+          <p>{{ block.settings.custom_text_1 }}</p>
+          <p>{{ block.settings.custom_text_2 }}</p>
+          <span class="feat-price text-highlight">{{ block.settings.product.price | money }}</span>
         </a>
       </div>
-    {% endfor %}
-  </div>
+    {% else %}
+      <div class="product-column">
+        <p>No product selected</p>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
+
+  </div>
 </section>
+
 
 
 {% schema %}

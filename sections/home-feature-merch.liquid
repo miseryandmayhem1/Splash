@@ -1,25 +1,33 @@
 <section class="home-feature-merch color-{{ section.settings.color_scheme }}">
   <div class="main-contain">
-  <div class="container">
-    <!-- First Column: Title and Button -->
-    <div class="merch-column intro-column">
-      <h2 class="mob-lrg">{{ section.settings.header_title }}</h2>
-      <a href="{{ section.settings.collection | link }}" class="standard-button home-merch-btn">Shop All</a>
-    </div>
-
-    <!-- Product Columns -->
-    {% for block in section.blocks %}
-      <div class="merch-column product-column">
-        <a href="{{ block.settings.product | product_url }}" class="home-merch-link">
-          <img src="{{ block.settings.product.featured_image | img_url: '300x' }}" alt="{{ block.settings.product.title }}" width="" height="">
-          <h3>{{ block.settings.product.title }}</h3>
-          <span class="merch-price text-highlight">{{ block.settings.product.price | money }}</span>
-        </a>
+    <div class="container">
+      <!-- First Column: Title and Button -->
+      <div class="merch-column intro-column">
+        <h2 class="mob-lrg">{{ section.settings.header_title }}</h2>
+        <a href="{{ section.settings.collection.url }}" class="standard-button home-merch-btn">Shop All</a>
       </div>
-    {% endfor %}
-  </div>
+
+      <!-- Product Columns -->
+     {% for block in section.blocks %}
+  {% if block.settings.product %}
+    <div class="merch-column product-column">
+      <a href="/products/{{ block.settings.product.handle }}" class="home-merch-link">
+        <img src="{{ block.settings.product.featured_image | img_url: '300x' }}" alt="{{ block.settings.product.title }}" width="" height="">
+        <h3>{{ block.settings.product.title }}</h3>
+        <span class="merch-price text-highlight">{{ block.settings.product.price | money }}</span>
+      </a>
+    </div>
+  {% else %}
+    <div class="merch-column product-column">
+      <p>No product selected</p>
+    </div>
+  {% endif %}
+{% endfor %}
+
+    </div>
   </div>
 </section>
+
 
 {% schema %}
 {

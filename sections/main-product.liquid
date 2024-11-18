@@ -1,7 +1,5 @@
-{% if product.tags contains 'dev-preview' %}
-  <meta name="robots" content="noindex">
-{% endif %}
-{% if product.tags contains 'dev-preview' %}
+
+
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -749,10 +747,8 @@
   </div>
 </section>
 
-{% else %}
-  <p>This product is not available for preview.</p>
-{% endif %}
-                            
+
+
 
 {% schema %}
 {
