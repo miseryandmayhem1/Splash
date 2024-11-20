@@ -1,0 +1,45 @@
+<div class="subpage-contain">
+  <section class="collection-hero">
+    <div class="collection-hero__overlay"></div>
+    <div
+      class="collection-hero__bg"
+      style="
+        background-image: url({{ collection.metafields.custom.background_image | img_url: 'master' }});
+      "
+      data-mobile-bg="{{ collection.metafields.custom.mobile_background_image | img_url: 'master' }}">
+    </div>
+    <div class="collection-hero__content">
+      <h1 class="collection-title">{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <p class="collection-description">{{ collection.description }}</p>
+      {% endif %}
+    </div>
+  </section>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Collection Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Your Collection Title"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_description",
+      "label": "Hero Description",
+      "default": "This is the collection description. Edit this text from the admin."
+    }
+  ]
+}
+{% endschema %}
