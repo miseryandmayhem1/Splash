@@ -99,7 +99,7 @@
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-        <aside
+        {% comment %} <aside
           aria-labelledby="verticalTitle"
           class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
           id="main-collection-filters"
@@ -112,7 +112,28 @@
             filter_type: section.settings.filter_type,
             paginate: paginate
           %}
-        </aside>
+        </aside> {% endcomment %}
+ <div class="collection-toolbar">
+  <div class="toolbar-left">
+    <p>{{ paginate.items }} products found</p>
+  </div>
+  <div class="toolbar-right">
+    {% if section.settings.enable_sorting %}
+      <form method="get" class="collection-sorting">
+        <label for="SortBy" class="visually-hidden">{{ 'products.facets.sort_by_label' | t }}</label>
+        <select name="sort_by" id="SortBy" onchange="this.form.submit()" class="sort-dropdown">
+          {% for option in collection.sort_options %}
+            <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>
+              {{ option.name }}
+            </option>
+          {% endfor %}
+        </select>
+      </form>
+    {% endif %}
+  </div>
+</div>
+
+
       {%- endif -%}
 
       <div
