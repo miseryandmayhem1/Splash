@@ -25,5 +25,8 @@
       }
     }
   },
-  "order": ["hero", "product-grid"]
+  "order": [
+    "hero",
+    "product-grid"
+  ]
 }

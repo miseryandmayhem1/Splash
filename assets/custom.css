@@ -107,6 +107,34 @@
     --variant-pills-shadow-blur-radius: 5px; */
 }
 
+/* .custom-icon {
+  width: 17px;
+  height: auto;
+  display: inline-block;
+} */
+
+.header__icons {
+  /* display: flex;
+    grid-area: icons;
+    justify-self: end;
+    padding-right: .8rem; */
+  width: 100%;
+}
+
+.header__icon {
+  /* height: 4.4rem; */
+  width: 3.7rem;
+  /* padding: 0; */
+}
+
+.cart-count-bubble {
+  background-color: #f7ce48;
+}
+
+.global-bg {
+  background-color: #fcf7ea;
+}
+
 /* ------------------------------------------- M&M sections --------------------------------------------------- */
 
 body {
@@ -192,6 +220,7 @@ h6 {
   white-space: normal;
 }
 
+.product__title h1,
 h2 {
   margin: 0;
   font-size: 51px;
@@ -980,7 +1009,7 @@ h2 {
   display: flex;
   gap: 20px;
   justify-content: center;
-  max-width: 620px;
+  max-width: 430px;
 }
 
 .home-social .social-column {
@@ -1255,9 +1284,9 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 40px;
 }
 
 .toolbar-left {
@@ -1288,4 +1317,40 @@ h2 {
     display: block;
     margin: 0;
   }
+}
+
+/* Product page ------------------------------------------------------------ */
+
+.yotpo-widget-subscriptions-add-to-cart .yotpo-radio-container.yotpo-selected,
+.yotpo-widget-subscriptions-add-to-cart .yotpo-radio-button-text-wrapper,
+.yotpo-widget-subscriptions-add-to-cart .yotpo-radio-container {
+  background-color: white !important;
+  border-color: white !important;
+  /* border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px 0; */
+}
+
+.yotpo-widget-subscriptions-add-to-cart
+  .yotpo-selling-plan-radio-label:checked:after,
+.yotpo-select-radio-label:checked:after {
+  background-color: black !important;
+}
+
+body .yotpo-widget-subscriptions-add-to-cart .yotpo-radio-container {
+  margin: 10px 0;
+  padding: 15px 15px;
+}
+
+body
+  .yotpo-widget-subscriptions-add-to-cart
+  .yotpo-radio-label.yotpo-radio-label-text {
+  cursor: pointer;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Fustat";
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: normal;
+  color: #1a1a1a;
 }

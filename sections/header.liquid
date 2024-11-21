@@ -255,7 +255,7 @@
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+        {% comment %} <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           <account-icon>
             {%- if customer and customer.has_avatar? -%}
               {{ customer | avatar }}
@@ -272,7 +272,19 @@
               endif
             -%}
           </span>
-        </a>
+        </a> {% endcomment %}
+        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+  <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/user.svg?v=1732200368" alt="Account" class="custom-icon" />
+  <span class="visually-hidden">
+    {% if customer %}
+      {{ 'customer.account_fallback' | t }}
+    {% else %}
+      {{ 'customer.log_in' | t }}
+    {% endif %}
+  </span>
+</a>
+
+
       {%- endif -%}
 
       {%- for block in section.blocks -%}
@@ -282,7 +294,7 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      {% comment %} <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
           if cart == empty
             render 'icon-cart-empty'
@@ -299,7 +311,20 @@
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         {%- endif -%}
-      </a>
+      </a> {% endcomment %}
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+  <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/cart.svg?v=1732200368" alt="Cart" class="custom-icon" />
+  <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+  {% if cart != empty %}
+    <div class="cart-count-bubble">
+      {% if cart.item_count < 100 %}
+        <span aria-hidden="true">{{ cart.item_count }}</span>
+      {% endif %}
+      <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+    </div>
+  {% endif %}
+</a>
+
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
