@@ -135,14 +135,26 @@
   background-color: #fcf7ea;
 }
 
+.social-button {
+  text-transform: uppercase;
+}
+
 /* ------------------------------------------- M&M sections --------------------------------------------------- */
 
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  border: 0 none;
+}
+
+#MainContent,
+.cart-item__details > *,
+.color-scheme-1,
+.cart,
+body {
   font-family: "Fustat", Arial, Helvetica, sans-serif;
   font-weight: 400;
-  box-sizing: border-box;
   font-size: 18px;
   line-height: 26px;
   background-color: #fcf7ea;
@@ -163,6 +175,16 @@ body {
 /* Remove padding for the home page */
 body.index {
   padding-top: 0px;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.content-for-layout {
+  flex: 1;
 }
 
 .announcement-bar {
@@ -189,6 +211,39 @@ body.index {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
+.header-wrapper--border-bottom {
+  border-bottom: 0;
+}
+
+.customer button,
+.button {
+  border: 0 none;
+  background-color: #1a1a1a;
+  border-radius: 100px;
+  padding: 10px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.25em;
+  font-weight: 500;
+  border: 0 none;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.button:hover {
+  color: #1a1a1a;
+  background-color: #f7ce48;
+}
+
+.button:after,
+.shopify-challenge__button:after,
+.customer button:after,
+.shopify-payment-button__button--unbranded:after {
+  display: none;
+}
+
+.customer.addresses button,
 .standard-button {
   border: 0 none;
   background-color: #f7ce48;
@@ -203,9 +258,18 @@ body.index {
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
+.customer.addresses button,
 .standard-button:hover {
   color: #f7ce48;
   background-color: #1a1a1a;
+}
+cart-remove-button .button:hover,
+cart-remove-button .button {
+  background-color: #fcf7ea;
+}
+
+cart-remove-button .icon-remove {
+  color: black;
 }
 
 h1,
@@ -241,6 +305,44 @@ h2 {
     line-height: 1em;
     font-weight: 700;
   }
+}
+
+/* sub page headers */
+.customer.addresses h1,
+.customer.register h1,
+.customer__title,
+#recover,
+.register h1,
+#login,
+.cart h1,
+.cart h2 {
+  /* text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.2em; */
+
+  font-size: 51px;
+  line-height: 1.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .customer.addresses h1,
+  .customer.register h1,
+  .customer__title,
+  #recover,
+  .register h1,
+  #login,
+  .cart h1,
+  .cart h2 {
+    font-size: 38px;
+    line-height: 1em;
+    font-weight: 700;
+  }
+}
+
+.cart .underlined-link {
+  text-transform: uppercase;
 }
 
 .text-highlight {
@@ -1353,4 +1455,71 @@ body
   font-style: normal;
   font-weight: normal;
   color: #1a1a1a;
+}
+
+/* /cart ------------------------------------------------------------ */
+
+.cart-item__details > * {
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 1.25em;
+  font-weight: 800;
+}
+
+@media (min-width: 750px) {
+  .totals {
+    justify-content: flex-start !important;
+    /* padding-left: 10px; */
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .tax-note {
+    margin-top: 8px !important;
+    margin-bottom: 2.2rem;
+    text-align: left !important;
+  }
+}
+
+.cart__login-title {
+  font-size: 20px;
+}
+
+body .cart__login-paragraph a {
+  text-transform: none !important;
+}
+
+/* /account ------------------------------------------------------------ */
+
+:is(.account, .order) {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  min-width: 100%;
+}
+
+:is(.account, .order) > div:nth-of-type(2) {
+  margin-top: 0px !important;
+}
+body .customer.account.section-template--16544309117063__main-padding {
+  width: 100%;
+  max-width: 1280px;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+body .customer.account.section-template--16544309117063__main-padding h2 {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-top: 60px;
+}
+
+#AddressNewHeading {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-top: 60px;
+  text-align: center;
 }
