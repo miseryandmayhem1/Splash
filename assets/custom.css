@@ -221,7 +221,7 @@ main.content-for-layout {
   background-color: #1a1a1a;
   border-radius: 100px;
   padding: 10px 20px;
-  color: #fff;
+  color: #f7ce48;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 16px;
@@ -243,6 +243,7 @@ main.content-for-layout {
   display: none;
 }
 
+body .shopify-payment-button__button,
 .customer.addresses button,
 .standard-button {
   border: 0 none;
@@ -258,11 +259,22 @@ main.content-for-layout {
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
-.customer.addresses button,
+body .shopify-payment-button__button {
+  border-radius: 100px;
+}
+
+body .shopify-payment-button__button:hover,
+.customer.addresses button:hover,
 .standard-button:hover {
   color: #f7ce48;
   background-color: #1a1a1a;
 }
+
+body .shopify-payment-button__button:hover {
+  color: #1a1a1a !important;
+  background-color: #f7ce48 !important;
+}
+
 cart-remove-button .button:hover,
 cart-remove-button .button {
   background-color: #fcf7ea;
@@ -270,6 +282,15 @@ cart-remove-button .button {
 
 cart-remove-button .icon-remove {
   color: black;
+}
+
+.add-address-cancel-btn {
+  background-color: #f7ce48 !important;
+  color: #1a1a1a !important;
+}
+
+.edit-address-title {
+  text-align: center !important;
 }
 
 h1,
@@ -366,7 +387,8 @@ h2 {
 
 @media screen and (min-width: 990px) {
   .header--middle-left {
-    grid-template-columns: auto 150px 80px;
+    /* grid-template-columns: auto 150px 80px; */
+    grid-template-columns: auto 60px 80px;
   }
 }
 
@@ -1515,6 +1537,7 @@ body .customer.account.section-template--16544309117063__main-padding h2 {
   padding-top: 60px;
 }
 
+.edit-address-title,
 #AddressNewHeading {
   font-size: 30px;
   font-weight: 800;
@@ -1522,4 +1545,32 @@ body .customer.account.section-template--16544309117063__main-padding h2 {
   margin-bottom: 20px;
   padding-top: 60px;
   text-align: center;
+}
+
+.yotpo-widget-subscriptions-customer-portal {
+  background: #f7ce48;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.yotpo-customized-text {
+  font-family: "Fustat", Arial, Helvetica, sans-serif !important;
+  color: #1a1a1a !important;
+}
+
+.yotpo-main-title {
+  padding-top: 30px;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+}
+
+@media screen and (max-width: 768px) {
+  body .customer.account.section-template--16544309117063__main-padding {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+.add-address-btn-holder {
+  text-align: center !important;
 }

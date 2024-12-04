@@ -14,12 +14,12 @@
     "home-featured-products": {
       "type": "home-featured-products",
       "blocks": {
-        "product_1": {
+        "product_3": {
           "type": "product",
           "settings": {
-            "product": "classic-protein-oatmeal",
+            "product": "maple-protein-oatmeal",
             "custom_text_1": "20G OF PROTEIN",
-            "custom_text_2": "4G OF SUGAR"
+            "custom_text_2": "5G OF SUGAR"
           }
         },
         "product_2": {
@@ -27,22 +27,22 @@
           "settings": {
             "product": "apple-cinnamon-protein-oatmeal",
             "custom_text_1": "20G OF PROTEIN",
-            "custom_text_2": "4G OF SUGAR"
+            "custom_text_2": "8G OF SUGAR"
           }
         },
-        "product_3": {
+        "product_1": {
           "type": "product",
           "settings": {
-            "product": "maple-protein-oatmeal",
+            "product": "classic-protein-oatmeal",
             "custom_text_1": "20G OF PROTEIN",
-            "custom_text_2": "4G OF SUGAR"
+            "custom_text_2": "2G OF SUGAR"
           }
         }
       },
       "block_order": [
-        "product_1",
+        "product_3",
         "product_2",
-        "product_3"
+        "product_1"
       ],
       "settings": {
         "header_title": "Meet the Oats",
@@ -56,22 +56,22 @@
         "text_line_1": {
           "type": "text_line",
           "settings": {
-            "highlighted_text": "High protein",
-            "normal_text": "from farm to muscle"
+            "highlighted_text": "20G of protein",
+            "normal_text": "for muscle growth and recovery"
           }
         },
         "text_line_2": {
           "type": "text_line",
           "settings": {
             "highlighted_text": "LOW SUGAR",
-            "normal_text": "for steady power"
+            "normal_text": "so you don’t crash"
           }
         },
         "text_line_3": {
           "type": "text_line",
           "settings": {
-            "highlighted_text": "a real meal",
-            "normal_text": "that keeps you full until lunch"
+            "highlighted_text": "High in fiber",
+            "normal_text": "to keep you full"
           }
         }
       },
@@ -113,7 +113,7 @@
         "block-4": {
           "type": "number_with_text",
           "settings": {
-            "number": "6 GS",
+            "number": "6 G",
             "description": "Fiber"
           }
         },
@@ -193,6 +193,7 @@
         "product_2",
         "product_3"
       ],
+      "disabled": true,
       "settings": {
         "header_title": "ROCK THE MAYHEM",
         "collection": "merch",

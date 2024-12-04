@@ -15,7 +15,7 @@
           <h3 class="home-featured-product-title">{{ block.settings.product.title }}</h3>
           <p>{{ block.settings.custom_text_1 }}</p>
           <p>{{ block.settings.custom_text_2 }}</p>
-          <span class="feat-price text-highlight">{{ block.settings.product.price | money }}</span>
+          {% comment %} <span class="feat-price text-highlight">{{ block.settings.product.price | money }}</span> {% endcomment %}
         </a>
       </div>
     {% else %}
