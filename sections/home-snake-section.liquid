@@ -5,19 +5,24 @@
   <div class="container main-contain">
     <!-- Snake Image (Left on Desktop, Top on Mobile) -->
     <div class="snake-image">
-
     </div>
 
     <!-- Text Section (Right on Desktop, Below on Mobile) -->
     <div class="text-content">
       <h2 class="mob-lrg">{{ section.settings.header_title }}</h2>
-
+      <div>
       {% for block in section.blocks %}
         <p>
           <span class="text-highlight">{{ block.settings.highlighted_text }}</span>
           {{ block.settings.normal_text }}
         </p>
       {% endfor %}
+      </div>
+      <div class="home-snake-button-container">
+        {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="standard-button">{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
@@ -42,6 +47,17 @@
       "id": "color_scheme",
       "label": "Color Scheme",
       "default": "scheme-6"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop All"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
     }
   ],
   "blocks": [

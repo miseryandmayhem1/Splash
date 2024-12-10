@@ -2,30 +2,47 @@
 
 <section class="madeof-section color-{{ section.settings.color_scheme }}">
   <div class="main-contain">
-  <div class="madeof-header">
-    <!-- Top Left Header -->
-    <div class="madeof-header-left">
-      <h2 class="mob-lrg">{{ section.settings.header_left }}</h2>
-    </div>
-
-    <!-- Top Right Header -->
-    <div class="madeof-header-right">
-      <h2 class="mob-lrg">{{ section.settings.header_right }}</h2>
-    </div>
-  </div>
-
-  <div class="madeof-grid">
-    {% for block in section.blocks %}
-      <div class="grid-item">
-        <div class="grid-number">
-          <strong>{{ block.settings.number }}</strong>
-        </div>
-        <div class="grid-text">
-          <p>{{ block.settings.description }}</p>
-        </div>
+    <div class="madeof-header">
+      <!-- Top Left Header -->
+      <div class="madeof-header-left">
+        <h2 class="mob-lrg">{{ section.settings.header_left }}</h2>
       </div>
-    {% endfor %}
-  </div>
+
+      <!-- Top Right Header -->
+      <div class="madeof-header-right">
+        <h2 class="mob-lrg">{{ section.settings.header_right }}</h2>
+      </div>
+    </div>
+
+    <div class="madeof-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'number_with_text' %}
+          <div class="grid-item">
+            <div class="grid-number">
+              <strong>{{ block.settings.number }}</strong>
+            </div>
+            <div class="grid-text">
+              <p>{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="madeof-badges">
+      {% for block in section.blocks %}
+        {% if block.type == 'badge' %}
+          <div class="madeof-badge" {{ block.shopify_attributes }}>
+            <img class="madeof-badge__image"
+                 src="{{ block.settings.badge_image | img_url: 'medium' }}"
+                 alt="{{ block.settings.badge_alt_text }}"
+                 loading="lazy"
+                 width="{{ block.settings.badge_width | default: 100 }}"
+                 height="{{ block.settings.badge_height | default: 100 }}" />
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -70,6 +87,35 @@
           "default": "Fiber content"
         }
       ]
+    },
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "badge_image",
+          "label": "Badge Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_alt_text",
+          "label": "Badge Alt Text",
+          "default": "Badge"
+        },
+        {
+          "type": "number",
+          "id": "badge_width",
+          "label": "Badge Width (px)",
+          "default": 100
+        },
+        {
+          "type": "number",
+          "id": "badge_height",
+          "label": "Badge Height (px)",
+          "default": 100
+        }
+      ]
     }
   ],
   "presets": [
@@ -85,17 +131,9 @@
           }
         },
         {
-          "type": "number_with_text",
+          "type": "badge",
           "settings": {
-            "number": "20%",
-            "description": "Sugar"
-          }
-        },
-        {
-          "type": "number_with_text",
-          "settings": {
-            "number": "30%",
-            "description": "Fat"
+            "badge_alt_text": "Badge 1"
           }
         }
       ]

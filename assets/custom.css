@@ -216,6 +216,7 @@ main.content-for-layout {
 }
 
 .customer button,
+.customer.addresses button,
 .button {
   border: 0 none;
   background-color: #1a1a1a;
@@ -231,6 +232,8 @@ main.content-for-layout {
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
+.customer button:hover,
+.customer.addresses button:hover,
 .button:hover {
   color: #1a1a1a;
   background-color: #f7ce48;
@@ -243,8 +246,9 @@ main.content-for-layout {
   display: none;
 }
 
+.home-snake-button,
+#cart-notification-button,
 body .shopify-payment-button__button,
-.customer.addresses button,
 .standard-button {
   border: 0 none;
   background-color: #f7ce48;
@@ -263,8 +267,8 @@ body .shopify-payment-button__button {
   border-radius: 100px;
 }
 
+.home-snake-button:hover,
 body .shopify-payment-button__button:hover,
-.customer.addresses button:hover,
 .standard-button:hover {
   color: #f7ce48;
   background-color: #1a1a1a;
@@ -730,6 +734,14 @@ h2 {
   background-color: yellow;
 }
 
+.snake-button-container {
+  margin-top: 30px;
+}
+
+.home-snake-button-container {
+  margin-top: 50px;
+}
+
 /* Mobile Styles */
 @media (max-width: 767px) {
   .snake-text-section .container {
@@ -820,6 +832,26 @@ h2 {
 
 .grid-text p {
   margin: 0;
+}
+
+.madeof-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.madeof-badge {
+  flex-shrink: 0;
+}
+
+.madeof-badge__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Mobile Responsiveness */
@@ -1119,7 +1151,7 @@ h2 {
 
 /* home-social ------------------------------------------------------------ */
 
-.home-social {
+/* .home-social {
   text-align: left;
   padding: 100px 40px;
   background-color: #fcf7ea;
@@ -1172,6 +1204,7 @@ h2 {
     margin-bottom: 40px;
   }
 }
+*/
 
 /* bundle and save ------------------------------------------------------------ */
 
@@ -1295,111 +1328,6 @@ h2 {
 }
 
 /* Collection > hero ------------------------------------------------------------ */
-
-/* General Hero Styling */
-.collection-hero {
-  position: relative;
-  width: 100%;
-  height: 480px; /* Adjust height as needed */
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  color: #fff; /* Text color */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Opacity Layer */
-.collection-hero__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity */
-  z-index: 1;
-}
-
-/* Background Image */
-.collection-hero__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Content Styling */
-.collection-hero__content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 40px; /* Adjust padding as needed */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-/* Title */
-.collection-title {
-  margin: 0;
-  text-align: left;
-  font-size: 90px;
-  line-height: 1em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: white;
-  max-width: 800px;
-}
-
-/* Description */
-.collection-description {
-  margin: 0;
-  font-size: 1rem;
-  text-align: left;
-  align-self: flex-end;
-}
-
-.collection-hero__content p {
-  max-width: 50%;
-}
-
-@media (max-width: 768px) {
-  .collection-hero {
-    height: 70vh;
-    min-height: 70vh;
-  }
-
-  .collection-hero__bg {
-    background-image: var(--mobile-bg);
-  }
-
-  .collection-hero__content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  .collection-title {
-    text-align: left;
-    font-size: 51px;
-  }
-
-  .collection-description {
-    text-align: left;
-  }
-
-  .collection-hero__content p {
-    max-width: 100%;
-  }
-}
 
 /* Collection > product grid ------------------------------------------------------------ */
 

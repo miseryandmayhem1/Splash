@@ -83,7 +83,9 @@
       "settings": {
         "snake_image": "shopify:\/\/shop_images\/snake1.png",
         "header_title": "BITE OFF SOMETHING YOU CAN CHEW",
-        "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
+        "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",
+        "button_text": "Browse Oatmeals",
+        "button_link": "shopify:\/\/collections\/oatmeal-collection"
       }
     },
     "home-madeof": {
@@ -130,6 +132,33 @@
             "number": "5-6 G",
             "description": "Fat"
           }
+        },
+        "badge_XAnAQG": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify:\/\/shop_images\/gf-black-transparent.png",
+            "badge_alt_text": "Gluten Free",
+            "badge_width": 100,
+            "badge_height": 100
+          }
+        },
+        "badge_ddgQGy": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify:\/\/shop_images\/kosher-black-transparent.png",
+            "badge_alt_text": "Kosher",
+            "badge_width": 100,
+            "badge_height": 100
+          }
+        },
+        "badge_C6aTQd": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify:\/\/shop_images\/gmo-black-transparent.png",
+            "badge_alt_text": "Non GMO",
+            "badge_width": 100,
+            "badge_height": 100
+          }
         }
       },
       "block_order": [
@@ -138,7 +167,10 @@
         "block-3",
         "block-4",
         "block-5",
-        "block-6"
+        "block-6",
+        "badge_XAnAQG",
+        "badge_ddgQGy",
+        "badge_C6aTQd"
       ],
       "settings": {
         "header_left": "WHAT WE’RE  MADE OF",
@@ -161,7 +193,7 @@
         "description": "Don’t know which flavor to start with or just love them all? Order our limited-time bundle of delicious, protein-packed oats.",
         "second_description": "<strong>1 Classic<br>\n1 Apple Cinnamon<br>\n1 Maple<\/strong>",
         "bundle_product": "oatmeal-bundle",
-        "bundle_image": "shopify:\/\/shop_images\/bundle-and-save.png",
+        "bundle_image": "shopify:\/\/shop_images\/bundle-new.png",
         "button_text": "Add to Cart",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
@@ -202,10 +234,44 @@
     },
     "home-social": {
       "type": "home-social",
+      "blocks": {
+        "instagram_post_idhLy7": {
+          "type": "instagram_post",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/social1.jpg",
+            "instagram_handle": "@username1",
+            "product": "classic-protein-oatmeal"
+          }
+        },
+        "instagram_post_JNzBh8": {
+          "type": "instagram_post",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/social2.jpg",
+            "instagram_handle": "@username2",
+            "product": "apple-cinnamon-protein-oatmeal"
+          }
+        },
+        "instagram_post_Nnbmb9": {
+          "type": "instagram_post",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/social3.jpg",
+            "instagram_handle": "@username3",
+            "product": "maple-protein-oatmeal"
+          }
+        }
+      },
+      "block_order": [
+        "instagram_post_idhLy7",
+        "instagram_post_JNzBh8",
+        "instagram_post_Nnbmb9"
+      ],
       "settings": {
         "heading": "Tag us on social",
+        "instagram_icon": "shopify:\/\/shop_images\/Instagram.svg",
         "instagram_link": "",
+        "tiktok_icon": "shopify:\/\/shop_images\/TikTok_4826ab80-e2d2-44d6-afbb-c05fd7e2bac3.svg",
         "tiktok_link": "",
+        "facebook_icon": "shopify:\/\/shop_images\/Facebook_3d617081-7ddb-4670-8b2e-124b0d99af7a.svg",
         "facebook_link": "",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
