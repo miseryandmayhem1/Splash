@@ -1,0 +1,223 @@
+<section class="home-reviews color-{{ section.settings.color_scheme }}">
+  <div class="main-contain">
+    <div class="container">
+      <div class="reviews-header">
+        <h2 class="mob-lrg">{{ section.settings.title }}</h2>
+      </div>
+
+      <div class="reviews-grid">
+        {% for block in section.blocks %}
+          <div class="review-item" {{ block.shopify_attributes }}>
+            <div class="review-content">
+              {% if block.settings.stars_image != blank %}
+                <div class="review-stars">
+                  {{ block.settings.stars_image | image_url: width: 100 | image_tag }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.review_text != blank %}
+                <div class="review-text">
+                  {{ block.settings.review_text }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="reviewer-info">
+              {% if block.settings.reviewer_image != blank %}
+                <div class="reviewer-image">
+                  {{ block.settings.reviewer_image | image_url: width: 60 | image_tag }}
+                </div>
+              {% endif %}
+              <div class="reviewer-details">
+                {% if block.settings.reviewer_name != blank %}
+                  <div class="reviewer-name"><span class="text-highlight">{{ block.settings.reviewer_name }}</span></div>
+                {% endif %}
+                {% if block.settings.reviewer_location != blank %}
+                  <div class="reviewer-location">{{ block.settings.reviewer_location }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.home-reviews {
+  text-align: left;
+  padding: 100px 40px 220px;
+  background-color: #fcf7ea;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+  max-width: 427px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-item {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.review-content {
+  flex-grow: 1;
+}
+
+.review-stars {
+  margin-bottom: 16px;
+}
+
+.review-stars img {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.review-text {
+  margin-bottom: 24px;
+  /* font-size: 16px;
+  line-height: 1.5; */
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 24px;
+
+}
+
+.reviewer-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer-details {
+  text-align: left;
+}
+
+.reviewer-name {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.reviewer-location {
+  text-transform: uppercase;
+  padding-left: 2px;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .home-reviews {
+    padding: 40px 20px 80px;
+  }
+
+  .social-header {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Reviews Grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "options": [
+        { "value": "default", "label": "Default" },
+        { "value": "scheme-light", "label": "Light" },
+        { "value": "scheme-dark", "label": "Dark" }
+      ],
+      "default": "default"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Review",
+      "type": "review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "stars_image",
+          "label": "Rating Stars Image"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewer_image",
+          "label": "Reviewer Image"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_location",
+          "label": "Reviewer Location"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Grid",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

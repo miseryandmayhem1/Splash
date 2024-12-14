@@ -182,8 +182,52 @@
       "type": "home-breakfast-chart",
       "settings": {
         "heading": "The Best Breakfast for the Job",
-        "image": "shopify:\/\/shop_images\/Chart_d59c3658-3bbc-4dd9-a214-d185ec5f1fc3.png",
-        "alt_text": "Misery &amp; Mayhem is, pound for pound, better than all other breakfast options listed here."
+        "image": "shopify:\/\/shop_images\/Chart-2.png",
+        "alt_text": "Misery & Mayhem is, pound for pound, better than all other breakfast options listed here."
+      }
+    },
+    "home-reviews": {
+      "type": "home-reviews",
+      "blocks": {
+        "review_block_1": {
+          "type": "review",
+          "settings": {
+            "stars_image": "shopify:\/\/shop_images\/4stars.png",
+            "review_text": "Misery & Mayhem oatmeal is my go-to! It fuels my morning workouts and keeps me full until lunch.",
+            "reviewer_image": "shopify:\/\/shop_images\/reviewer.jpg",
+            "reviewer_name": "Sarah Johnson",
+            "reviewer_location": "New York, NY"
+          }
+        },
+        "review_block_2": {
+          "type": "review",
+          "settings": {
+            "stars_image": "shopify:\/\/shop_images\/5stars.png",
+            "review_text": "I feel energized and focused all day without the dreaded sugar crash.\u2028",
+            "reviewer_image": "shopify:\/\/shop_images\/reviewer.jpg",
+            "reviewer_name": "Michael Chen",
+            "reviewer_location": "Los Angeles, CA"
+          }
+        },
+        "review_block_3": {
+          "type": "review",
+          "settings": {
+            "stars_image": "shopify:\/\/shop_images\/5stars.png",
+            "review_text": "Perfect for my camping trips! Easy to prepare and incredibly nutritious.\u2028",
+            "reviewer_image": "shopify:\/\/shop_images\/reviewer.jpg",
+            "reviewer_name": "Emma Wilson",
+            "reviewer_location": "Chicago, IL"
+          }
+        }
+      },
+      "block_order": [
+        "review_block_1",
+        "review_block_2",
+        "review_block_3"
+      ],
+      "settings": {
+        "title": "Don’t just take it from us",
+        "color_scheme": "default"
       }
     },
     "bundle-and-save": {
@@ -268,11 +312,11 @@
       "settings": {
         "heading": "Tag us on social",
         "instagram_icon": "shopify:\/\/shop_images\/Instagram.svg",
-        "instagram_link": "",
+        "instagram_link": "https:\/\/www.instagram.com\/getmiseryandmayhem\/",
         "tiktok_icon": "shopify:\/\/shop_images\/TikTok_4826ab80-e2d2-44d6-afbb-c05fd7e2bac3.svg",
-        "tiktok_link": "",
+        "tiktok_link": "https:\/\/www.instagram.com\/getmiseryandmayhem\/",
         "facebook_icon": "shopify:\/\/shop_images\/Facebook_3d617081-7ddb-4670-8b2e-124b0d99af7a.svg",
-        "facebook_link": "",
+        "facebook_link": "https:\/\/www.instagram.com\/getmiseryandmayhem\/",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88"
       }
     },
@@ -542,6 +586,7 @@
     "home-snake-section",
     "home-madeof",
     "home-breakfast-chart",
+    "home-reviews",
     "bundle-and-save",
     "home-feature-merch",
     "home-social",

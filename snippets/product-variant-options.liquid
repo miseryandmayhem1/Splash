@@ -26,6 +26,8 @@
 -%}
 
 {%- for value in option.values -%}
+  {% assign value_downcase = value | downcase | strip %}
+  {% unless value_downcase contains '6' and value_downcase contains 'pk' or value_downcase contains 'pack' %}
   {%- liquid
     assign option_disabled = true
 
@@ -129,4 +131,5 @@
       {%- endif %}
     </option>
   {%- endif -%}
+  {% endunless %}
 {%- endfor -%}

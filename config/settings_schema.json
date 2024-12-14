@@ -1144,6 +1144,7 @@
       }
     ]
   },
+
   {
     "name": "t:settings_schema.drawers.name",
     "settings": [
