@@ -219,6 +219,32 @@ main.content-for-layout {
   border-bottom: 0;
 }
 
+@media (max-width: 579px) {
+  .header__icons {
+    padding: 0 0 0 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-drawer__navigation {
+    background-color: #fcf7ea;
+  }
+
+  .menu-drawer__navigation a {
+    font-family: "Antarctican Headline";
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+
+  .menu-drawer__utility-links {
+    background-color: #f7ce48 !important;
+    text-transform: uppercase;
+  }
+}
+
+/* BUTTONS ---------------------------------------- */
+
 .customer button,
 .customer.addresses button,
 .button {
@@ -770,7 +796,7 @@ h2 {
     padding: 40px 20px;
   }
   .snake-text-section {
-    padding-top: 120px;
+    padding-top: 20px;
     padding-bottom: 40px;
   }
 
@@ -1328,6 +1354,11 @@ h2 {
     padding: 20px 20px;
     max-width: none;
     margin: 0;
+  }
+
+  .subpage-contain-none {
+    padding: 0;
+    margin-top: -1px;
   }
 }
 
