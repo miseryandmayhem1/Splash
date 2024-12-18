@@ -1,7 +1,14 @@
 <footer class="custom-footer">
   <div class="footer-logo">
-    <img src="https://cdn.shopify.com/s/files/1/0598/7201/8567/files/mm-footer-logo.svg?v=1729092005" width="" height="">
-  </div>
+  {%- if section.settings.footer_logo -%}
+    <img
+      src="{{ section.settings.footer_logo | img_url: 'master' }}"
+      alt="{{ section.settings.footer_logo.alt | default: shop.name }}"
+      class="footer-logo-image"
+      loading="lazy"
+    >
+  {%- endif -%}
+</div>
 
   <div class="footer-links">
     <!-- Column 1 -->

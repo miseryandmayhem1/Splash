@@ -33,6 +33,21 @@ body
   color: #1a1a1a;
 }
 
+.terms-content {
+  margin-top: 2em;
+  /* Fix for long URLs */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.terms-content a {
+  word-break: break-word;
+}
 
 
 {% endstylesheet %}

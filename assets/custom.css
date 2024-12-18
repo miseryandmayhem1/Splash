@@ -527,6 +527,16 @@ h2 {
   margin-top: 0;
 }
 
+.footer-logo {
+  max-width: 100%;
+}
+
+.footer-logo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .footer-links {

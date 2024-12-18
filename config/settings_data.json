@@ -136,6 +136,7 @@
       "custom-footer": {
         "type": "custom-footer",
         "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/miserymayhem-logo_yellow.png",
           "link_1": "Oats",
           "link_1_url": "shopify:\/\/collections\/oatmeal-collection",
           "link_2": "",
