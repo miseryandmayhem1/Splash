@@ -145,13 +145,13 @@
           "link_4": "Support",
           "link_4_url": "",
           "link_5": "Contact Us",
-          "link_5_url": "",
+          "link_5_url": "mailto:contact@miseryandmayem.com",
           "link_6": "",
           "link_6_url": "shopify:\/\/pages\/splash",
           "link_7": "Privacy Policy",
-          "link_7_url": "http:\/\/google.com",
+          "link_7_url": "shopify:\/\/pages\/privacy-policy",
           "link_8": "Terms & Conditions",
-          "link_8_url": "",
+          "link_8_url": "shopify:\/\/pages\/terms-of-service",
           "copyright_text": "©2024 Misery & Mayhem"
         }
       }

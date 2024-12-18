@@ -241,6 +241,21 @@ main.content-for-layout {
     background-color: #f7ce48 !important;
     text-transform: uppercase;
   }
+
+  .menu-drawer__menu-item--active,
+  .menu-drawer__menu-item:focus,
+  .menu-drawer__close-button:focus,
+  .menu-drawer__menu-item:hover,
+  .menu-drawer__close-button:hover {
+    color: rgb(var(--color-foreground));
+    background-color: transparent !important;
+  }
+
+  .menu-drawer__navigation-container {
+    display: grid;
+    height: calc(100vh - 69px);
+    grid-template-rows: 1fr 80px;
+  }
 }
 
 /* BUTTONS ---------------------------------------- */
