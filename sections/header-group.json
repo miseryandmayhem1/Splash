@@ -8,15 +8,14 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Subscribers get perks!",
-            "link": "shopify:\/\/pages\/subscribe"
+            "text": "Subscribe and save 10% on your first order!",
+            "link": "shopify:\/\/collections\/all"
           }
         }
       },
       "block_order": [
         "announcement-bar-0"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "show_line_separator": true,

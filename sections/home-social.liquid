@@ -1,57 +1,75 @@
 <section class="home-social color-{{ section.settings.color_scheme }}">
   <div class="main-contain">
     <div class="container">
+      <div class="social-header">
+        <h2 class="mob-lrg">{{ section.settings.heading }}</h2>
+        <div class="social-icons">
+          <!-- Instagram -->
+          {% if section.settings.instagram_icon %}
+            <a href="{% if section.settings.instagram_link != blank %}{{ section.settings.instagram_link }}{% else %}#{% endif %}"
+               target="_blank"
+               class="social-icon">
+              <img src="{{ section.settings.instagram_icon | image_url: width: 48 }}"
+                   alt="Instagram"
+                   width="24"
+                   height="24"
+                   loading="lazy">
+            </a>
+          {% endif %}
 
+          <!-- TikTok -->
+          {% if section.settings.tiktok_icon %}
+            <a href="{% if section.settings.tiktok_link != blank %}{{ section.settings.tiktok_link }}{% else %}#{% endif %}"
+               target="_blank"
+               class="social-icon">
+              <img src="{{ section.settings.tiktok_icon | image_url: width: 48 }}"
+                   alt="TikTok"
+                   width="24"
+                   height="24"
+                   loading="lazy">
+            </a>
+          {% endif %}
 
+          <!-- X (Twitter) -->
+          {% if section.settings.x_icon %}
+            <a href="{% if section.settings.x_link != blank %}{{ section.settings.x_link }}{% else %}#{% endif %}"
+               target="_blank"
+               class="social-icon">
+              <img src="{{ section.settings.x_icon | image_url: width: 48 }}"
+                   alt="X (Twitter)"
+                   width="24"
+                   height="24"
+                   loading="lazy">
+            </a>
+          {% endif %}
 
+          <!-- LinkedIn -->
+          {% if section.settings.linkedin_icon %}
+            <a href="{% if section.settings.linkedin_link != blank %}{{ section.settings.linkedin_link }}{% else %}#{% endif %}"
+               target="_blank"
+               class="social-icon">
+              <img src="{{ section.settings.linkedin_icon | image_url: width: 48 }}"
+                   alt="LinkedIn"
+                   width="24"
+                   height="24"
+                   loading="lazy">
+            </a>
+          {% endif %}
 
-<div class="social-header">
-  <h2 class="mob-lrg">{{ section.settings.heading }}</h2>
-  <div class="social-icons">
-    <!-- Instagram -->
-    {% if section.settings.instagram_icon %}
-      <a href="{% if section.settings.instagram_link != blank %}{{ section.settings.instagram_link }}{% else %}#{% endif %}"
-         target="_blank"
-         class="social-icon">
-        <img src="{{ section.settings.instagram_icon | image_url: width: 48 }}"
-             alt="Instagram"
-             width="24"
-             height="24"
-             loading="lazy">
-      </a>
-    {% endif %}
-
-    <!-- TikTok -->
-    {% if section.settings.tiktok_icon %}
-      <a href="{% if section.settings.tiktok_link != blank %}{{ section.settings.tiktok_link }}{% else %}#{% endif %}"
-         target="_blank"
-         class="social-icon">
-        <img src="{{ section.settings.tiktok_icon | image_url: width: 48 }}"
-             alt="TikTok"
-             width="24"
-             height="24"
-             loading="lazy">
-      </a>
-    {% endif %}
-
-    <!-- Facebook -->
-    {% if section.settings.facebook_icon %}
-      <a href="{% if section.settings.facebook_link != blank %}{{ section.settings.facebook_link }}{% else %}#{% endif %}"
-         target="_blank"
-         class="social-icon">
-        <img src="{{ section.settings.facebook_icon | image_url: width: 48 }}"
-             alt="Facebook"
-             width="24"
-             height="24"
-             loading="lazy">
-      </a>
-    {% endif %}
-  </div>
-</div>
-
-
-
-
+          <!-- Facebook -->
+          {% if section.settings.facebook_icon %}
+            <a href="{% if section.settings.facebook_link != blank %}{{ section.settings.facebook_link }}{% else %}#{% endif %}"
+               target="_blank"
+               class="social-icon">
+              <img src="{{ section.settings.facebook_icon | image_url: width: 48 }}"
+                   alt="Facebook"
+                   width="24"
+                   height="24"
+                   loading="lazy">
+            </a>
+          {% endif %}
+        </div>
+      </div>
 
       <div class="instagram-grid">
         {% for block in section.blocks %}
@@ -66,11 +84,11 @@
               {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
 
-            {% if block.settings.instagram_handle != blank %}
+            {% comment %} {% if block.settings.instagram_handle != blank %}
               <p class="instagram-handle">BY {{ block.settings.instagram_handle }}</p>
-            {% endif %}
+            {% endif %} {% endcomment %}
 
-            {% if block.settings.product != blank %}
+            {% comment %} {% if block.settings.product != blank %}
               <div class="product-button">
                 {%- assign product = all_products[block.settings.product] -%}
                 <button type="button"
@@ -79,7 +97,7 @@
                   {{ 'products.product.add_to_cart' | t }}
                 </button>
               </div>
-            {% endif %}
+            {% endif %} {% endcomment %}
           </div>
         {% endfor %}
       </div>
@@ -128,6 +146,34 @@
       "type": "url",
       "id": "tiktok_link",
       "label": "TikTok Link"
+    },
+    {
+      "type": "header",
+      "content": "X (Twitter)"
+    },
+    {
+      "type": "image_picker",
+      "id": "x_icon",
+      "label": "X Icon"
+    },
+    {
+      "type": "url",
+      "id": "x_link",
+      "label": "X Link"
+    },
+    {
+      "type": "header",
+      "content": "LinkedIn"
+    },
+    {
+      "type": "image_picker",
+      "id": "linkedin_icon",
+      "label": "LinkedIn Icon"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_link",
+      "label": "LinkedIn Link"
     },
     {
       "type": "header",

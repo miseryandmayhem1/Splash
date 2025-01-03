@@ -23,10 +23,23 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "bundle_and_save_KHJ7M7": {
+      "type": "bundle-and-save",
+      "settings": {
+        "title": "Try all three",
+        "description": "Don’t know which flavor to start with or just love them all? Order our limited-time bundle of delicious, protein-packed oats.",
+        "second_description": "<strong>6 Apple Cinnamon<br>\n6 Classic<br>\n6 Maple<\/strong>",
+        "bundle_product": "oatmeal-bundle",
+        "bundle_image": "shopify:\/\/shop_images\/bundle-new_c1c5afa7-700f-40a0-929c-2945d06c90d7.png",
+        "button_text": "Buy now",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
     "hero",
-    "product-grid"
+    "product-grid",
+    "bundle_and_save_KHJ7M7"
   ]
 }

@@ -7,12 +7,6 @@
           "type": "title",
           "settings": {}
         },
-        "yotpo_product_reviews_ugc_star_rating_dQpkDe": {
-          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "price": {
           "type": "price",
           "disabled": true,
@@ -20,6 +14,7 @@
         },
         "yotpo_loyalty_rewards_product_points_module_app_block_8Bwk7E": {
           "type": "shopify:\/\/apps\/yotpo-loyalty-rewards\/blocks\/product-points-module-app-block\/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "disabled": true,
           "settings": {}
         },
         "description": {
@@ -57,7 +52,6 @@
       },
       "block_order": [
         "title",
-        "yotpo_product_reviews_ugc_star_rating_dQpkDe",
         "price",
         "yotpo_loyalty_rewards_product_points_module_app_block_8Bwk7E",
         "description",
@@ -96,17 +90,46 @@
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",
         "image_ratio": "square",
         "image_shape": "default",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "bundle_and_save_6Ce6EF": {
+      "type": "bundle-and-save",
+      "settings": {
+        "title": "Try all three",
+        "description": "Don’t know which flavor to start with or just love them all? Order our limited-time bundle of delicious, protein-packed oats.",
+        "second_description": "<strong>6 Apple Cinnamon<br>\n6 Classic<br>\n6 Maple<\/strong>",
+        "bundle_product": "oatmeal-bundle",
+        "bundle_image": "shopify:\/\/shop_images\/bundle-new_c1c5afa7-700f-40a0-929c-2945d06c90d7.png",
+        "button_text": "Add to Cart",
+        "color_scheme": ""
+      }
+    },
+    "home_email_cANeJm": {
+      "type": "home-email",
+      "settings": {
+        "header_title": "Be the First to Know",
+        "sub_text": "Be the first to know when we launch.",
+        "button_text": "Join Now"
+      }
+    },
+    "17358434865c296c80": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "bundle_and_save_6Ce6EF",
+    "home_email_cANeJm",
+    "17358434865c296c80"
   ]
 }

@@ -1259,7 +1259,6 @@ h2 {
     margin-bottom: 40px;
   }
 }
-*/
 
 /* bundle and save ------------------------------------------------------------ */
 
@@ -1267,7 +1266,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 40px;
+  padding: 0px 40px;
 }
 
 .bundle-content {
