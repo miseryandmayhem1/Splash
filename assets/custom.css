@@ -830,6 +830,33 @@ h2 {
   }
 }
 
+.home-snake {
+  position: absolute;
+  top: 80px;
+  /* Add these new properties */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
+
+.home-snake.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 767px) {
+  .home-snake {
+    position: relative;
+    top: auto;
+    width: 100%;
+    height: auto;
+    left: -20px;
+    /* Maintain animation properties */
+    opacity: 0;
+    transform: translateX(-50px); /* Smaller slide for mobile */
+  }
+}
+
 /* home madeof ------------------------------------------------------------ */
 
 .madeof-section {

@@ -44,3 +44,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slide-in");
+          // Optional: stop observing after animation
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      // Adjust these options as needed
+      threshold: 0.2, // Triggers when 20% of the element is visible
+      rootMargin: "50px", // Adds margin to the viewport detection
+    }
+  );
+
+  // Observe all snake images
+  const snakeImages = document.querySelectorAll(".home-snake");
+  snakeImages.forEach((image) => {
+    observer.observe(image);
+  });
+});
