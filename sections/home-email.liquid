@@ -1,35 +1,58 @@
+{% comment %}newsletter-form.liquid{% endcomment %}
 <section class="home-email">
   <div class="email-container">
-
     <div class="email-title-container">
       <h2 class="email-header">{{ section.settings.header_title }}</h2>
     </div>
 
     <div class="email-content-container">
       <p>{{ section.settings.sub_text }}</p>
+      <div id="messageContainer" class="message-container"></div>
 
-      <!-- Display Error or Success Messages -->
-      {% if form.errors %}
-        <p class="form-error">There was an error with your submission. Please try again.</p>
-      {% elsif form.posted_successfully? %}
-        <p class="form-success">Thank you for subscribing!</p>
-      {% endif %}
-
-      <!-- Standard HTML Form for Newsletter -->
-      <form method="post" action="/contact" id="newsletterForm" accept-charset="UTF-8" class="newsletter-form">
-        <input type="hidden" name="form_type" value="customer">
-        <input type="hidden" name="utf8" value="✓">
+      {%- form 'customer', id: 'newsletterForm', class: 'newsletter-form' -%}
         <input type="hidden" name="contact[tags]" value="newsletter">
-        <input type="email" name="contact[email]" placeholder="Email Address" required class="email-input">
+        <input type="email"
+          name="contact[email]"
+          id="emailInput"
+          placeholder="Email Address"
+          required
+          class="email-input">
         <button type="submit" class="email-submit-button">{{ section.settings.button_text }}</button>
-        <div id="form-message"></div> <!-- Placeholder for success/error message -->
-      </form>
-
+      {%- endform -%}
     </div>
   </div>
 </section>
 
+<style>
+.message-container { padding: 10px 0; display: none; }
+.success-message { color: #155724; background: #d4edda; padding: 10px; border-radius: 4px; }
+.error-message { color: #721c24; background: #f8d7da; padding: 10px; border-radius: 4px; }
+</style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('newsletterForm');
+  const messageContainer = document.getElementById('messageContainer');
+  const formSection = document.querySelector('.home-email');
+  let formPosition = sessionStorage.getItem('formPosition');
+
+  if (formPosition) {
+    window.scrollTo(0, parseInt(formPosition));
+    sessionStorage.removeItem('formPosition');
+  }
+
+  form.addEventListener('submit', function() {
+    sessionStorage.setItem('formPosition', window.pageYOffset);
+  });
+
+  if (window.location.search.includes('customer_posted=true')) {
+    form.style.display = 'none';
+    messageContainer.innerHTML = '<div class="success-message">Thanks for subscribing!</div>';
+    messageContainer.style.display = 'block';
+    history.replaceState({}, '', window.location.pathname);
+  }
+});
+</script>
 
 {% schema %}
 {
@@ -56,15 +79,8 @@
   ],
   "presets": [
     {
-      "name": "Email Sub Section",
-      "category": "Custom",
-      "settings": {
-        "header_title": "Be the First to Know",
-        "sub_text": "Be the first to know when we launch.",
-        "button_text": "Join Now"
-      }
+      "name": "Email Sub Section"
     }
   ]
 }
 {% endschema %}
-
