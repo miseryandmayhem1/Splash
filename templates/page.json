@@ -1,1 +1,25 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"image_banner_Ey8H84":{"type":"image-banner","blocks":{"heading_i67yVJ":{"type":"heading","settings":{"heading":"Deliveries Right On Time","heading_size":"h1"}},"text_JcYUUp":{"type":"text","settings":{"text":"Take the risk and subscribe for savings! Enjoy new flavors first, cancel anytime, and receive samples before anyone else.","text_style":"body"}},"buttons_Nn6xAW":{"type":"buttons","settings":{"button_label_1":"Pick Your Flavor","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_i67yVJ","text_JcYUUp","buttons_Nn6xAW"],"custom_css":[".content-container {border-radius: 5px;}"],"settings":{"image_overlay_opacity":0,"image_height":"small","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"custom_liquid_pxbgyB":{"type":"custom-liquid","settings":{"custom_liquid":"<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"728795\" widget-type=\"SubscriptionsCustomerPortal\"><\/div>","color_scheme":"","padding_top":40,"padding_bottom":52}},"featured_collection_NjVTdV":{"type":"featured-collection","settings":{"title":"","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"protein-oatmeal-flavors","products_to_show":4,"columns_desktop":4,"full_width":true,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"quick_add":"bulk","columns_mobile":"1","swipe_on_mobile":true,"padding_top":36,"padding_bottom":36}},"multirow_ELX87i":{"type":"multirow","blocks":{"row_nYqEbJ":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/pouch-mockup_maple_2404.png","caption":"Caption","heading":"Row","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","button_label":"Subscribe","button_link":"shopify:\/\/products\/maple-protein-oatmeal"}},"row_xfPpgC":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/pouch-mockup_classic_2404.png","caption":"Caption","heading":"Row","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","button_label":"Subscribe","button_link":"shopify:\/\/products\/classic-protein-oatmeal"}},"row_eFRKdz":{"type":"row","settings":{"image":"shopify:\/\/shop_images\/pouch-mockup_apple-cinn_2404.png","caption":"Caption","heading":"Row","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","button_label":"Subscribe","button_link":"shopify:\/\/products\/apple-cinnamon-protein-oatmeal"}}},"block_order":["row_nYqEbJ","row_xfPpgC","row_eFRKdz"],"settings":{"image_height":"medium","desktop_image_width":"medium","heading_size":"h1","text_style":"body","button_style":"primary","desktop_content_position":"middle","desktop_content_alignment":"left","image_layout":"alternate-left","section_color_scheme":"scheme-1","row_color_scheme":"scheme-1","mobile_content_alignment":"left","padding_top":36,"padding_bottom":36}}},"order":["main","image_banner_Ey8H84","custom_liquid_pxbgyB","featured_collection_NjVTdV","multirow_ELX87i"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_pxbgyB": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"728795\" widget-type=\"SubscriptionsCustomerPortal\"><\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_pxbgyB"
+  ]
+}
