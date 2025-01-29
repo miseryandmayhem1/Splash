@@ -167,12 +167,18 @@ body {
 }
 
 body {
-  padding-top: 97px; /* Default desktop padding */
+  padding-top: 96px; /* Default desktop padding */
+}
+
+@media (max-width: 989px) {
+  body {
+    padding-top: 76px; /* Reduced padding for mobile */
+  }
 }
 
 @media (max-width: 768px) {
   body {
-    padding-top: 70px; /* Reduced padding for mobile */
+    padding-top: 76px; /* Reduced padding for mobile */
   }
 }
 
@@ -468,6 +474,7 @@ h2 {
   padding: 40px;
   background-color: #1a1a1a;
   color: #fff;
+  margin-top: 100px;
 }
 
 .footer-logo {
@@ -539,6 +546,10 @@ h2 {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .custom-footer {
+    margin-top: 50px;
+  }
+
   .footer-links {
     grid-template-columns: 1fr; /* Stack columns on mobile */
     gap: 20px;

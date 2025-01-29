@@ -1,0 +1,56 @@
+<section class="home-featured-products">
+  <div class="main-contain">
+  <div class="header-area">
+      <h2>{{ collection.metafields.custom.collection_custom_title }}</h2>
+    </div>
+
+    <div class="product-columns">
+      {% paginate collection.products by 3 %}
+        {% for product in collection.products %}
+          <div class="product-column">
+            <a class="home-product-link" href="{{ product.url }}">
+              <img src="{{ product.featured_image | img_url: '300x' }}" alt="{{ product.title }}" width="" height="">
+              <h3 class="home-featured-product-title">{{ product.title }}</h3>
+
+
+
+
+
+         {% if product.metafields.custom.custom_text_line_1 %}
+  <p>{{ product.metafields.custom.custom_text_line_1 }}</p>
+{% endif %}
+{% if product.metafields.custom.custom_text_line_2 %}
+  <p>{{ product.metafields.custom.custom_text_line_2 }}</p>
+{% endif %}
+            </a>
+          </div>
+        {% endfor %}
+
+        {% if paginate.pages > 1 %}
+          <div class="pagination">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Oatmeal Collection Grid",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Oatmeal Collection Grid"
+    }
+  ]
+}
+{% endschema %}
