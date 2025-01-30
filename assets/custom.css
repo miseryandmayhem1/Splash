@@ -1612,3 +1612,11 @@ body .customer.account.section-template--16544309117063__main-padding h2 {
 .add-address-btn-holder {
   text-align: center !important;
 }
+
+/* related prices hide */
+.related-products .price,
+.related-products .price__regular,
+.related-products .price__sale,
+.related-products .price__container {
+  display: none !important;
+}

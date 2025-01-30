@@ -1,88 +1,266 @@
 {{ 'custom.css' | asset_url | stylesheet_tag }}
 
-
 <section class="hero-video-section">
-  <video class="hero-video"
-    autoplay
-    loop
-    muted playsinline
-   >
-    <!-- Desktop Video -->
-    <source src="https://cdn.shopify.com/videos/c/o/v/f9fc45ef2c9247a0bc82547b74dd66e1.mp4" type="video/mp4" media="(min-width: 768px)">
-    <!-- Mobile Video -->
-    <source src="https://cdn.shopify.com/videos/c/o/v/3f7dd93da299426ca133f7cd5f1243e7.mp4" type="video/mp4" media="(max-width: 767px)">
-
-    Your browser does not support the video tag.
+  <video
+    id="heroVideo"
+    class="hero-video"
+    {% if section.settings.autoplay %}autoplay{% endif %}
+    {% if section.settings.loop %}loop{% endif %}
+    muted
+    playsinline
+    preload="auto"
+    x-webkit-airplay="allow"
+    poster="{% if section.settings.mobile_poster %}{{ section.settings.mobile_poster | img_url: 'master' }}{% endif %}"
+  >
+    <source src="{{ section.settings.desktop_video }}" type="video/mp4" media="(min-width: 768px)">
+    <source src="{{ section.settings.mobile_video }}" type="video/mp4" media="(max-width: 767px)">
   </video>
 
-  <div class="hero-content">
-    <!-- Header Text (Desktop: Bottom-Left, Mobile: Top) -->
-    <div class="hero-header-text">
-      <h1>{{ section.settings.header_text }}</h1>
-    </div>
+ <div class="hero-content">
+   <div class="hero-header-text">
+     <h1>{{ section.settings.header_text }}</h1>
+   </div>
 
-    <!-- Subheader and Button (Desktop: Bottom-Right, Mobile: Bottom) -->
-    <div class="hero-subcontent">
-      <p>{{ section.settings.subheader_text }}</p>
-      <a href="{{ section.settings.button_link }}" class="standard-button hero-button">{{ section.settings.button_text }}</a>
-    </div>
-  </div>
+   <div class="hero-subcontent">
+     <p>{{ section.settings.subheader_text }}</p>
+     <a href="{{ section.settings.button_link }}" class="standard-button hero-button">{{ section.settings.button_text }}</a>
+   </div>
+ </div>
 </section>
 
 {% schema %}
 {
-  "name": "Hero Video Section",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "autoplay",
-      "label": "Autoplay",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "loop",
-      "label": "Loop Video",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "header_text",
-      "label": "Header Text",
-      "default": "Welcome to Our Store"
-    },
-    {
-      "type": "text",
-      "id": "subheader_text",
-      "label": "Subheader Text",
-      "default": "Discover our latest products"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link",
-      "default": "/collections/all"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Shop Now"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Hero",
-      "settings": {
-        "autoplay": true,
-        "loop": true,
-        "header_text": "Welcome to Our Store",
-        "subheader_text": "Discover our latest products",
-        "button_link": "/collections/all",
-        "button_text": "Shop Now"
-      }
-    }
-  ]
+ "name": "Hero Video Section",
+ "settings": [
+   {
+     "type": "url",
+     "id": "desktop_video",
+     "label": "Desktop Video URL",
+     "info": "Upload video for desktop devices"
+   },
+   {
+     "type": "image_picker",
+     "id": "desktop_poster",
+     "label": "Desktop Video Poster",
+     "info": "Shown while the desktop video is loading"
+   },
+   {
+     "type": "url",
+     "id": "mobile_video",
+     "label": "Mobile Video URL",
+     "info": "Upload video for mobile devices"
+   },
+   {
+     "type": "image_picker",
+     "id": "mobile_poster",
+     "label": "Mobile Video Poster",
+     "info": "Shown while the mobile video is loading"
+   },
+   {
+     "type": "checkbox",
+     "id": "autoplay",
+     "label": "Autoplay",
+     "default": true
+   },
+   {
+     "type": "checkbox",
+     "id": "loop",
+     "label": "Loop Video",
+     "default": true
+   },
+   {
+     "type": "text",
+     "id": "header_text",
+     "label": "Header Text",
+     "default": "Welcome to Our Store"
+   },
+   {
+     "type": "text",
+     "id": "subheader_text",
+     "label": "Subheader Text",
+     "default": "Discover our latest products"
+   },
+   {
+     "type": "url",
+     "id": "button_link",
+     "label": "Button Link",
+     "default": "/collections/all"
+   },
+   {
+     "type": "text",
+     "id": "button_text",
+     "label": "Button Text",
+     "default": "Shop Now"
+   }
+ ],
+ "presets": [
+   {
+     "name": "Hero Video Section",
+     "category": "Video",
+     "settings": {
+       "autoplay": true,
+       "loop": true,
+       "header_text": "Welcome to Our Store",
+       "subheader_text": "Discover our latest products",
+       "button_link": "/collections/all",
+       "button_text": "Shop Now"
+     }
+   }
+ ]
 }
 {% endschema %}
+
+{% stylesheet %}
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px;
+  height: 100%;
+  color: white;
+}
+
+.hero-header-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  max-width: 300px;
+}
+
+.hero-header-text h1 {
+  color: white;
+  font-family: "Fustat";
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 1.15em;
+  margin: 0;
+}
+
+.hero-subcontent {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: left;
+  max-width: 300px;
+  font-weight: 100;
+}
+
+/* .hero-subcontent p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+} */
+
+.hero-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.hero-button:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .hero-header-text {
+    position: static;
+    text-align: left;
+    margin-bottom: auto;
+    padding-left: 0;
+  }
+
+  .hero-header-text h1 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.15em;
+    margin: 0;
+    max-width: 204px;
+    padding-top: 48px;
+  }
+
+  .hero-subcontent {
+    position: static;
+    text-align: left;
+    margin-top: auto;
+    padding-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 10px;
+  }
+
+  /* .hero-subcontent p {
+    font-size: 1rem;
+  } */
+}
+{% endstylesheet %}
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('heroVideo');
+
+  // Force play on iOS
+  video.load();
+
+  // Play video after a small delay to ensure loading
+  setTimeout(() => {
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log('Video play error:', error);
+        // Try to play again on user interaction
+        document.addEventListener('touchstart', () => {
+          video.play().catch(e => console.log('Play on touch failed:', e));
+        }, { once: true });
+      });
+    }
+  }, 100);
+
+  // Monitor video state
+  video.addEventListener('playing', () => {
+    console.log('Video is playing');
+  });
+
+  video.addEventListener('waiting', () => {
+    console.log('Video is waiting/buffering');
+  });
+
+  video.addEventListener('error', (e) => {
+    console.log('Video error:', video.error);
+  });
+});
+{% endjavascript %}

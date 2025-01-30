@@ -3,6 +3,10 @@
     "hero_video": {
       "type": "hero-video",
       "settings": {
+        "desktop_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8e2d1456dd1044239026575de1f26640.mp4",
+        "desktop_poster": "shopify:\/\/shop_images\/hero-desk-poster.png",
+        "mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c1eb821c271b41318fd4992ae2331522.mp4",
+        "mobile_poster": "shopify:\/\/shop_images\/hero-mobile-poster_d7c91b37-ede7-4498-87f1-5f5cf9a18663.jpg",
         "autoplay": true,
         "loop": true,
         "header_text": "Don't Struggle Hungry",
