@@ -1,8 +1,8 @@
 {
   "current": {
-    "logo": "shopify://shop_images/mm-nav-logo.svg",
+    "logo": "shopify:\/\/shop_images\/mm-nav-logo.svg",
     "logo_width": 190,
-    "favicon": "shopify://shop_images/snake-coil-black.png",
+    "favicon": "shopify:\/\/shop_images\/snake-coil-black.png",
     "type_header_font": "noticia_text_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -99,7 +99,7 @@
     "sale_badge_color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",
     "sold_out_badge_color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",
     "brand_headline": "",
-    "brand_description": "<p></p>",
+    "brand_description": "<p><\/p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -136,31 +136,41 @@
       "custom-footer": {
         "type": "custom-footer",
         "settings": {
-          "footer_logo": "shopify://shop_images/miserymayhem-logo_yellow.png",
+          "footer_logo": "shopify:\/\/shop_images\/miserymayhem-logo_yellow.png",
           "link_1": "Oats",
-          "link_1_url": "shopify://collections/oatmeal-collection",
+          "link_1_url": "shopify:\/\/collections\/oatmeal-collection",
           "link_2": "",
           "link_2_url": "",
           "link_3": "",
           "link_3_url": "",
           "link_4": "Support",
-          "link_4_url": "",
+          "link_4_url": "mailto:support@miseryandmayem.com",
           "link_5": "Contact Us",
           "link_5_url": "mailto:contact@miseryandmayem.com",
           "link_6": "",
-          "link_6_url": "shopify://pages/splash",
+          "link_6_url": "shopify:\/\/pages\/splash",
           "link_7": "Privacy Policy",
-          "link_7_url": "shopify://pages/privacy-policy",
+          "link_7_url": "shopify:\/\/pages\/privacy-policy",
           "link_8": "Terms & Conditions",
-          "link_8_url": "shopify://pages/terms-of-service",
+          "link_8_url": "shopify:\/\/pages\/terms-of-service",
           "copyright_text": "©2025 Misery & Mayhem"
+        }
+      },
+      "collection-hero": {
+        "type": "collection-hero",
+        "settings": {}
+      },
+      "collection-oatmeal-grid": {
+        "type": "collection-oatmeal-grid",
+        "settings": {
+          "color_scheme": ""
         }
       }
     },
     "content_for_index": [],
     "blocks": {
       "8962992520437913685": {
-        "type": "shopify://apps/yotpo-loyalty-rewards/blocks/loader-app-embed-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+        "type": "shopify:\/\/apps\/yotpo-loyalty-rewards\/blocks\/loader-app-embed-block\/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
         "disabled": false,
         "settings": {
           "inject_modules_loader": true,
@@ -168,12 +178,12 @@
         }
       },
       "8257630261509358238": {
-        "type": "shopify://apps/yotpo-subscriptions/blocks/app-embed-block/ef25e582-ada5-4bb0-b4e7-f94e97ab1bb4",
+        "type": "shopify:\/\/apps\/yotpo-subscriptions\/blocks\/app-embed-block\/ef25e582-ada5-4bb0-b4e7-f94e97ab1bb4",
         "disabled": false,
         "settings": {}
       },
       "7570552984445421165": {
-        "type": "shopify://apps/yotpo-product-reviews-ugc/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "type": "shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/settings\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
         "disabled": false,
         "settings": {}
       }
@@ -403,7 +413,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p></p>",
+      "brand_description": "<p><\/p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

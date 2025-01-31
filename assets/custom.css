@@ -312,6 +312,7 @@ body .shopify-payment-button__button,
   line-height: 1.25em;
   font-weight: 600;
   transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  white-space: nowrap;
 }
 
 body .shopify-payment-button__button {

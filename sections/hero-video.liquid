@@ -10,103 +10,102 @@
     playsinline
     preload="auto"
     x-webkit-airplay="allow"
-    poster="{% if section.settings.mobile_poster %}{{ section.settings.mobile_poster | img_url: 'master' }}{% endif %}"
   >
     <source src="{{ section.settings.desktop_video }}" type="video/mp4" media="(min-width: 768px)">
     <source src="{{ section.settings.mobile_video }}" type="video/mp4" media="(max-width: 767px)">
   </video>
 
- <div class="hero-content">
-   <div class="hero-header-text">
-     <h1>{{ section.settings.header_text }}</h1>
-   </div>
+  <div class="hero-content">
+    <div class="hero-header-text">
+      <h1>{{ section.settings.header_text }}</h1>
+    </div>
 
-   <div class="hero-subcontent">
-     <p>{{ section.settings.subheader_text }}</p>
-     <a href="{{ section.settings.button_link }}" class="standard-button hero-button">{{ section.settings.button_text }}</a>
-   </div>
- </div>
+    <div class="hero-subcontent">
+      <p>{{ section.settings.subheader_text }}</p>
+      <a href="{{ section.settings.button_link }}" class="standard-button hero-button">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
 </section>
 
 {% schema %}
 {
- "name": "Hero Video Section",
- "settings": [
-   {
-     "type": "url",
-     "id": "desktop_video",
-     "label": "Desktop Video URL",
-     "info": "Upload video for desktop devices"
-   },
-   {
-     "type": "image_picker",
-     "id": "desktop_poster",
-     "label": "Desktop Video Poster",
-     "info": "Shown while the desktop video is loading"
-   },
-   {
-     "type": "url",
-     "id": "mobile_video",
-     "label": "Mobile Video URL",
-     "info": "Upload video for mobile devices"
-   },
-   {
-     "type": "image_picker",
-     "id": "mobile_poster",
-     "label": "Mobile Video Poster",
-     "info": "Shown while the mobile video is loading"
-   },
-   {
-     "type": "checkbox",
-     "id": "autoplay",
-     "label": "Autoplay",
-     "default": true
-   },
-   {
-     "type": "checkbox",
-     "id": "loop",
-     "label": "Loop Video",
-     "default": true
-   },
-   {
-     "type": "text",
-     "id": "header_text",
-     "label": "Header Text",
-     "default": "Welcome to Our Store"
-   },
-   {
-     "type": "text",
-     "id": "subheader_text",
-     "label": "Subheader Text",
-     "default": "Discover our latest products"
-   },
-   {
-     "type": "url",
-     "id": "button_link",
-     "label": "Button Link",
-     "default": "/collections/all"
-   },
-   {
-     "type": "text",
-     "id": "button_text",
-     "label": "Button Text",
-     "default": "Shop Now"
-   }
- ],
- "presets": [
-   {
-     "name": "Hero Video Section",
-     "category": "Video",
-     "settings": {
-       "autoplay": true,
-       "loop": true,
-       "header_text": "Welcome to Our Store",
-       "subheader_text": "Discover our latest products",
-       "button_link": "/collections/all",
-       "button_text": "Shop Now"
-     }
-   }
- ]
+  "name": "Hero Video Section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "desktop_video",
+      "label": "Desktop Video URL",
+      "info": "Upload video for desktop devices"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_poster",
+      "label": "Desktop Video Poster",
+      "info": "Shown while the desktop video is loading"
+    },
+    {
+      "type": "url",
+      "id": "mobile_video",
+      "label": "Mobile Video URL",
+      "info": "Upload video for mobile devices"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_poster",
+      "label": "Mobile Video Poster",
+      "info": "Shown while the mobile video is loading"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop Video",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header Text",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "text",
+      "id": "subheader_text",
+      "label": "Subheader Text",
+      "default": "Discover our latest products"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Video Section",
+      "category": "Video",
+      "settings": {
+        "autoplay": true,
+        "loop": true,
+        "header_text": "Welcome to Our Store",
+        "subheader_text": "Discover our latest products",
+        "button_link": "/collections/all",
+        "button_text": "Shop Now"
+      }
+    }
+  ]
 }
 {% endschema %}
 
@@ -117,6 +116,7 @@
   height: 100vh;
   max-height: 800px;
   overflow: hidden;
+  background-color: #000000;
 }
 
 .hero-video {
@@ -168,11 +168,6 @@
   font-weight: 100;
 }
 
-/* .hero-subcontent p {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-} */
-
 .hero-button {
   display: inline-block;
   padding: 1rem 2rem;
@@ -221,16 +216,28 @@
     max-width: 100%;
     padding-bottom: 10px;
   }
-
-  /* .hero-subcontent p {
-    font-size: 1rem;
-  } */
 }
 {% endstylesheet %}
 
 {% javascript %}
 document.addEventListener('DOMContentLoaded', function() {
   const video = document.getElementById('heroVideo');
+  const desktopPoster = `{% if section.settings.desktop_poster %}{{ section.settings.desktop_poster | img_url: 'master' }}{% endif %}`;
+  const mobilePoster = `{% if section.settings.mobile_poster %}{{ section.settings.mobile_poster | img_url: 'master' }}{% endif %}`;
+
+  function setPoster() {
+    if (window.innerWidth >= 768) {
+      video.setAttribute('poster', desktopPoster);
+    } else {
+      video.setAttribute('poster', mobilePoster);
+    }
+  }
+
+  // Set initial poster
+  setPoster();
+
+  // Update poster on resize
+  window.addEventListener('resize', setPoster);
 
   // Force play on iOS
   video.load();

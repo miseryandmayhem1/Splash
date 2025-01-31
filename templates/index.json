@@ -60,7 +60,7 @@
         "text_line_1": {
           "type": "text_line",
           "settings": {
-            "highlighted_text": "20G of protein",
+            "highlighted_text": "Organic Whey Protein",
             "normal_text": "for muscle growth and recovery"
           }
         },
@@ -88,7 +88,7 @@
         "snake_image": "shopify:\/\/shop_images\/snake1.png",
         "header_title": "BITE OFF SOMETHING YOU CAN CHEW",
         "color_scheme": "scheme-38af5a64-8703-4a1d-8643-c8b28dea0e88",
-        "button_text": "Browse Oatmeals",
+        "button_text": "Browse Oatmeal",
         "button_link": "shopify:\/\/collections\/oatmeal-collection"
       }
     },
